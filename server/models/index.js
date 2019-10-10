@@ -1,5 +1,6 @@
 module.exports = {
   User: require("./user"),
-  Rental: require("./rental"),
-  Review: require("./review")
+  Item: require("./item"),
+  Review: require("./review"),
+  Category: require("./category")
 };

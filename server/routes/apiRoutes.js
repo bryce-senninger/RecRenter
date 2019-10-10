@@ -6,4 +6,10 @@ module.exports = function(app) {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
   });
+
+  app.post("/api/item", (req, res) => {
+    db.Item.create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.json(err));
+  });
 };
