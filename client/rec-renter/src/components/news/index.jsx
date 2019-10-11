@@ -1,4 +1,5 @@
 import React from "react";
+import "../news/style-news.css";
 
 function News() {
   return (
