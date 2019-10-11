@@ -12,6 +12,19 @@ if (process.env.NODE_ENV === "production") {
 
 //define API routes here
 
+const mongoose = require("mongoose");
+const mongoURL = process.env.MONGODB_URI || "mongodb://localhost/RecRenter";
+mongoose
+  .connect(mongoURL, { useNewUrlParser: true })
+  .then(() => {
+    console.log("💻 ==> Connetected!!");
+  })
+  .catch(err => {
+    console.log(`Error connecting to Mongo: ${err}`);
+  });
+
+require("./routes/apiRoutes")(app);
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
