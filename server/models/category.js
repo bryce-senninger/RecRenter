@@ -2,8 +2,12 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const categorySchema = new Schema({
-  category: Array,
-  subCategory: Array,
+  snowsports: Array,
+  watersports: Array,
+  camping: Array,
+  bikes: Array,
+  verticle: Array,
+  misc: Array,
   item: { type: Schema.Types.ObjectId, ref: "Item" }
 });
 
