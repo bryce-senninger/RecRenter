@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Header from "../components/header";
-import NavBar from "../components/navBar";
 import MissionCard from "../components/mission";
 import News from "../components/news";
 import Weather from "../components/weather";
