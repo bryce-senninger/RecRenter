@@ -1,0 +1,32 @@
+.container {
+  width: 90%;
+  max-width: 120rem;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* fraction*/
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-style: none;
+  padding-top: 2px;
+}
+.card-body {
+  /* margin-top: 10rem; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 2.5rem;
+  text-align: center;
+}
+img {
+  margin: auto;
+}
+.card-text:last-child {
+  margin-bottom: 0;
+  padding: 38px;
+}
