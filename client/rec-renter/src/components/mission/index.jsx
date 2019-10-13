@@ -1,24 +1,48 @@
 import React from "react";
+import "../mission/style-mission.css";
+import logo from "./mission-one-2.png";
+import logo2 from "./mission-one.png";
+import icon from "./tree.png";
 
 function MissionCard() {
   return (
     <>
-      <div className="card">
-        <div className="card-body">
-          <h5 className="card-title">Tree</h5>
-          <p className="card-text">Mission statement 1.</p>
+      <div className="container">
+        <div className="card">
+          <div className="card-body">
+            <h5 className="card-title"></h5>
+            <img width={150} height={150} src={logo}></img>
+            <p className="card-text">
+              Mission statement 1 : Lorem ipsum dolor, sit amet consectetur
+              adipisicing elit. Optio hic culpa perspiciatis quidem odit
+              temporibus velit illum mollitia facere asperiores alias dicta
+              molestias vel dolorum libero dolorem, debitis nostrum cupiditate.
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="card">
-        <div className="card-body">
-          <h5 className="card-title">Bike</h5>
-          <p className="card-text">Mission statement 2.</p>
+        <div className="card">
+          <div className="card-body">
+            <h5 className="card-title"></h5>
+            <img width={150} height={150} src={logo2}></img>
+            <p className="card-text">
+              Mission statement 1 : Lorem ipsum dolor, sit amet consectetur
+              adipisicing elit. Optio hic culpa perspiciatis quidem odit
+              temporibus velit illum mollitia facere asperiores alias dicta
+              molestias vel dolorum libero dolorem, debitis nostrum cupiditate.
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="card">
-        <div className="card-body">
-          <h5 className="card-title">Money</h5>
-          <p className="card-text">Mission statement 3.</p>
+        <div className="card">
+          <div className="card-body">
+            <h5 className="card-title"></h5>
+            <img width={150} height={150} src={logo}></img>
+            <p className="card-text">
+              Mission statement 1 : Lorem ipsum dolor, sit amet consectetur
+              adipisicing elit. Optio hic culpa perspiciatis quidem odit
+              temporibus velit illum mollitia facere asperiores alias dicta
+              molestias vel dolorum libero dolorem, debitis nostrum cupiditate.
+            </p>
+          </div>
         </div>
       </div>
     </>
