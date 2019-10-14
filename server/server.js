@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === "production") {
 const mongoose = require("mongoose");
 const mongoURL = process.env.MONGODB_URI || "mongodb://localhost/RecRenter";
 mongoose
-  .connect(mongoURL, { useNewUrlParser: true })
+  .connect(mongoURL, { useNewUrlParser: true, useFindAndModify: false })
   .then(() => {
     console.log("💻 ==> Connetected!!");
   })
