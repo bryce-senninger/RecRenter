@@ -3,11 +3,13 @@ const db = require("../models");
 module.exports = {
   findAll: function(req, res) {
     db.Item.find({})
+      .populate("categoryId", "category")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
   },
   findById: function(req, res) {
     db.Item.findById(req.params.id)
+      .populate("categoryId")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
   },
