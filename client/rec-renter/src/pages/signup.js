@@ -4,9 +4,9 @@ import MissionCard from "../components/mission";
 import News from "../components/news";
 import Weather from "../components/weather";
 import Featured from "../components/featuredPosts";
-import "./style.css";
+import SignUpForm from "../components/signUpForm";
 
-class Landing extends Component {
+class SignUp extends Component {
   state = {};
 
   //lifecycle methods
@@ -14,16 +14,10 @@ class Landing extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <MissionCard />
-        <div className="container-landing">
-          <News />
-          <Weather />
-        </div>
-        <Featured />
+        <SignUpForm />
       </div>
     );
   }
 }
 
-export default Landing;
+export default SignUp;
