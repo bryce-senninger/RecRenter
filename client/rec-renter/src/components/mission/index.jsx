@@ -7,7 +7,9 @@ import icon from "./tree.png";
 function MissionCard() {
   return (
     <>
+      <h2 className="mission-header">What is Rec Renter?</h2>
       <div className="container">
+        {/* <h2 className="mission-header">What is Rec Renter?</h2> */}
         <div className="card">
           <div className="card-body">
             <h5 className="card-title"></h5>

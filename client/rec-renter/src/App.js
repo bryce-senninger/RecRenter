@@ -4,6 +4,8 @@ import "./App.css";
 import Landing from "./pages/landing";
 import NavBar from "./components/navBar";
 import Footer from "./components/footer";
+// import News from "./components/news";
+// import Weather from "./components/weather";
 
 const App = () => (
   <Router>

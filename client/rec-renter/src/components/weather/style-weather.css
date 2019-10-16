@@ -3,5 +3,29 @@
   font-size: 1rem;
   width: 895px;
   margin: auto;
-  background-color: black;
+  background-color: black !important;
+}
+#weatherWidgetInner {
+  background-color: black !important;
+}
+a {
+  margin-top: 117px;
+  width: 645px;
+}
+.container-weather {
+  margin: auto;
+  max-width: 1000px;
+  /* float: left; */
+  /* grid: none; */
+}
+.weatherwidget-io {
+  display: block;
+  max-width: 1000px;
+  position: relative;
+  height: 568px;
+  padding: 0px;
+  overflow: hidden;
+  text-align: left;
+  text-indent: 0px !important;
+  /* display: inline !important; */
 }
