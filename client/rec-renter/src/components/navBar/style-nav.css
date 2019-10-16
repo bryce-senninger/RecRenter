@@ -14,6 +14,7 @@ a {
   transition: transform 650ms ease-out;
   border-style: double;
   border-color: black;
+  margin-top: 13px;
 }
 .btn:hover {
   color: white;
@@ -32,11 +33,14 @@ li {
 }
 .nav-link {
   display: block;
+  margin-top: 14px;
   padding: 0.5rem 1rem;
-  font-weight: 900;
+  font-weight: 600;
   background: linear-gradient(to top, #000000, black, white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  /* font-family: "Libre Barcode 128 Text", cursive; */
+  font-size: 16px;
 }
 .nav-link:hover {
   background: linear-gradient(to top, #4776e6, #8e54e9, #000000, #20bdff);
@@ -46,6 +50,7 @@ li {
 .nav-item {
   /* padding-top: 70px; */
   padding: 6px;
+  width: 114px;
 }
 .nav {
   display: -ms-flexbox;
@@ -56,4 +61,12 @@ li {
   margin-bottom: 0;
   list-style: none;
   margin: 5px 5px 5px;
+  margin-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 0px;
+}
+.navbar-nav .nav-link {
+  padding-right: 20px;
+  padding-left: 7px;
 }

@@ -4,6 +4,7 @@ import MissionCard from "../components/mission";
 import News from "../components/news";
 import Weather from "../components/weather";
 import Featured from "../components/featuredPosts";
+import "./style.css";
 
 class Landing extends Component {
   state = {};
@@ -15,8 +16,10 @@ class Landing extends Component {
       <div className="App">
         <Header />
         <MissionCard />
-        <News />
-        <Weather />
+        <div className="container-landing">
+          <News />
+          <Weather />
+        </div>
         <Featured />
       </div>
     );

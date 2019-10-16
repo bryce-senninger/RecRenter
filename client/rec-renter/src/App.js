@@ -5,6 +5,8 @@ import Landing from "./pages/landing";
 import SignUp from "./pages/signup";
 import NavBar from "./components/navBar";
 import Footer from "./components/footer";
+// import News from "./components/news";
+// import Weather from "./components/weather";
 
 class App extends React.Component {
   state = { showModal: false };
