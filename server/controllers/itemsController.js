@@ -3,7 +3,11 @@ const db = require("../models");
 module.exports = {
   findAll: function(req, res) {
     db.Item.find({})
-      .populate("categoryId", "category")
+      .populate({
+        path: "categoryId",
+        select: "category",
+        populate: [{ path: "subcategories", select: "subcategoryId" }]
+      })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
   },

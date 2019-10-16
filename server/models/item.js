@@ -6,14 +6,14 @@ const itemSchema = new Schema({
   keyword: Array,
   description: String,
   location: { type: String, required: true },
-  images: Array,
+  images: { data: Buffer, contentType: String },
   price: { type: Number, required: true },
   isRented: { type: Boolean, default: false },
   created_at: { type: Date, default: null },
   ownerId: { type: Schema.Types.ObjectId, ref: "User" },
   renterId: { type: Schema.Types.ObjectId, ref: "User" },
   categoryId: { type: Schema.Types.ObjectId, ref: "Category" },
-  subcategoryId: { type: Schema.Types.ObjectId, ref: "Category" }
+  subcategoriesId: { type: Schema.Types.ObjectId, ref: "Category" }
 });
 
 const Item = mongoose.model("Item", itemSchema);

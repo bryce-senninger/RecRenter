@@ -7,7 +7,7 @@ const subcategorySchema = new Schema({
 
 const categorySchema = new Schema({
   category: String,
-  subcategories: [subcategorySchema]
+  subcategories: { subcategorySchema }
 });
 
 const Category = mongoose.model("Category", categorySchema);
