@@ -2,19 +2,18 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const itemSchema = new Schema({
-  title: { type: String, required: true, unique: true },
-  // category: { type: String, unique: true },
-  // subCategory: String,
+  title: { type: String, required: true },
   keyword: Array,
   description: String,
-  location: String,
-  images: Array,
-  price: Number,
+  location: { type: String, required: true },
+  images: { data: Buffer, contentType: String },
+  price: { type: Number, required: true },
   isRented: { type: Boolean, default: false },
   created_at: { type: Date, default: null },
-  ownerID: { type: Schema.Types.ObjectId, ref: "User" },
-  renterID: { type: Schema.Types.ObjectId, ref: "User" },
-  category: { type: Schema.Types.ObjectId, ref: "Category" }
+  ownerId: { type: Schema.Types.ObjectId, ref: "User" },
+  renterId: { type: Schema.Types.ObjectId, ref: "User" },
+  categoryId: { type: Schema.Types.ObjectId, ref: "Category" },
+  subcategoriesId: { type: Schema.Types.ObjectId, ref: "Category" }
 });
 
 const Item = mongoose.model("Item", itemSchema);

@@ -8,7 +8,10 @@ const userSchema = new Schema({
   lastname: { type: String, required: true },
   email: String,
   phone: Number,
-  location: String,
+  city: String,
+  state: String,
+  zip: Number,
+  photo: { data: Buffer, type: String },
   rating: Number
 });
 
