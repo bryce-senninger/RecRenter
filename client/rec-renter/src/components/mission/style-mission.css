@@ -5,10 +5,10 @@
   margin: 0 auto;
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  /* grid-template-columns: 1fr 1fr 1fr; */
 }
-.my-skills {
+.card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,17 +17,6 @@
   border-style: none;
   padding-top: 2px;
   /* grid-template-columns: 1fr 1fr 1fr; */
-}
-.skills {
-  margin-top: 10rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  grid-gap: 2.5rem;
-  text-align: center;
-  flex: 1;
-  /* grid-template-columns: 1fr 1fr 1fr; */
-  /* position: absolute; */
-  /* padding-top: 0px; */
 }
 
 .img-mission {

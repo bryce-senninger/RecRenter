@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "../modal/style-modal.css";
 
 const root = document.getElementById("root");
 const modalRoot = document.getElementById("modal-root");
@@ -37,16 +38,16 @@ class Modal extends React.Component {
             margin: "1rem",
             position: "relative",
             minWidth: "300px",
-            boxShadow: "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
+            // boxShadow: "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
             justifySelf: "center"
           }}
           className="modal-body"
         >
           {this.props.children}
           <hr />
-          <input placeholder="username"></input>
+          <input placeholder="  Username"></input>
           <hr />
-          <input placeholder="password"></input>
+          <input placeholder="  Password"></input>
           <hr />
           <button onClick={this.props.onClose}>Log In</button>
           <hr />

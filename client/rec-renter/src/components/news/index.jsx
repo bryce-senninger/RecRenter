@@ -5,7 +5,7 @@ function News() {
   return (
     <div className="wrapper">
       <ul className="list-unstyled">
-        <h1>Recreation News</h1>
+        {/* <h1>Recreation News</h1> */}
         <li className="media">
           {/* <img src="..." className="mr-3" alt="..." /> */}
           <div className="media-body">
@@ -14,7 +14,12 @@ function News() {
             Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
             scelerisque ante sollicitudin. Cras purus odio, vestibulum in
             vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-            vulputate fringilla. Donec lacinia congue felis in faucibus.
+            vulputate fringilla. Donec lacinia congue felis in faucibus. Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Et maiores quis
+            magnam minus voluptates voluptas aliquam aperiam quisquam! Iste
+            quibusdam veniam quam rerum quo corrupti deleniti animi consequatur
+            voluptatem eos?
+            <br />
           </div>
         </li>
       </ul>

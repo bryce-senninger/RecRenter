@@ -1,0 +1,17 @@
+.modal-body {
+  padding: 20px;
+  background: rgb(255, 255, 255);
+  border-radius: 2px;
+  display: inline-block;
+  min-height: 300px;
+  margin: 1rem;
+  position: relative;
+  min-width: 300px;
+  justify-self: center;
+  text-align: center;
+}
+
+body.modal-body {
+  overflow: hidden;
+  position: fixed;
+}
