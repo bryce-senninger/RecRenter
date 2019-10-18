@@ -152,18 +152,21 @@ function SignUpForm() {
               placeholder="password"
             />
           </div>
-          <div class="form-group">
-            <label>Upload a photo to your profile</label>
-            <input
-              type="link"
-              class="form-control"
-              id="upload"
-              placeholder="www.yourimagelink.com"
-            />
-          </div>
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlFile1">
+                Upload a Photo to Your Profile
+              </label>
+              <input
+                type="file"
+                class="form-control-file"
+                id="exampleFormControlFile1"
+              />
+            </div>
+          </form>
         </form>
         <button class="btn btn-primary submit" type="submit">
-          Ready?
+          Sign Up
         </button>
       </div>
     </div>

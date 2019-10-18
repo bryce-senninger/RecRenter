@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "category": "Snow Sports",
+    "image": "./assets/1.png"
+  },
+  {
+    "id": 2,
+    "name": "Water Sports",
+    "image": "./assets/2.png"
+  },
+  {
+    "id": 3,
+    "name": "Biking",
+    "image": "./assets/3.png"
+  },
+  {
+    "id": 4,
+    "name": "Camping",
+    "image": "./assets/4.png"
+  },
+  {
+    "id": 5,
+    "name": "Vertical",
+    "image": "./assets/5.png"
+  },
+  {
+    "id": 6,
+    "name": "Misc",
+    "image": "./assets/6.png"
+  }
+]
