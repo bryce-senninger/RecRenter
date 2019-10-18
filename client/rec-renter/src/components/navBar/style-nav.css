@@ -33,6 +33,7 @@ li {
 }
 .nav-link {
   display: block;
+  width: 130px;
   margin-top: 14px;
   padding: 0.5rem 1rem;
   font-weight: 600;
@@ -61,12 +62,87 @@ li {
   margin-bottom: 0;
   list-style: none;
   margin: 5px 5px 5px;
-  margin-bottom: 15px;
+  margin-bottom: 23px;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 0px;
 }
-.navbar-nav .nav-link {
+/* .navbar-nav .nav-link {
   padding-right: 20px;
   padding-left: 7px;
+} */
+img {
+  width: 87px;
+  height: 87px;
+  margin: auto;
+}
+.navbar-toggler {
+  /* color: black; */
+  border-style: double;
+  border-color: black;
+  /* background-color: black; */
+}
+
+/* [type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
+  float: right;
+  margin: 31px;
+} */
+
+.navbar-toggler {
+  cursor: pointer;
+  float: right;
+  margin: 31px;
+}
+.navbar-collapse {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-align: center;
+  align-items: center;
+  /* padding: 12px; */
+  /* width: 100%; */
+  /* background-color: gainsboro; */
+}
+.navbar-collapse .btn {
+  float: left;
+  /* background: black; */
+}
+.navbar-toggler-icon {
+  width: 100%;
+  padding-top: 3px;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px) {
+  .navbar-collapse {
+    /* background: grey; */
+    color: black;
+    padding: 4px;
+    padding: 4px;
+    border-style: double;
+    margin-top: 38px;
+    border-radius: 18px;
+    /* width: ; */
+  }
+  .navbar-collapse .btn {
+    margin: auto;
+    left: 0;
+    align-content: left;
+  }
+  .ml-auto,
+  .mx-auto {
+    margin-left: 8px !important;
+    margin-bottom: 0px;
+    /* margin-right: 403px; */
+  }
+  .nav-link {
+    padding-top: 10px;
+    text-decoration: underline black;
+  }
 }

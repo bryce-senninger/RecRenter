@@ -2,4 +2,7 @@
   display: flex;
   margin: auto;
   margin-bottom: 97px;
+  background-color: black;
+  color: white;
+  padding: 30px;
 }

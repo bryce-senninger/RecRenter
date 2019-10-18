@@ -19,7 +19,7 @@ a {
   /* grid: none; */
 }
 .weatherwidget-io {
-  display: block;
+  display: none;
   max-width: 1000px;
   position: relative;
   height: 568px;
