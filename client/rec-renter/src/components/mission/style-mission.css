@@ -5,9 +5,10 @@
   margin: 0 auto;
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* fraction*/
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
 }
-.card {
+.my-skills {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,17 +16,24 @@
   padding: 2rem;
   border-style: none;
   padding-top: 2px;
+  /* grid-template-columns: 1fr 1fr 1fr; */
 }
-.card-body {
-  /* margin-top: 10rem; */
+.skills {
+  margin-top: 10rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   grid-gap: 2.5rem;
   text-align: center;
-  padding-top: 0px;
+  flex: 1;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* position: absolute; */
+  /* padding-top: 0px; */
 }
-img {
+
+.img-mission {
   margin: auto;
+  width: 150px;
+  height: 150px;
 }
 .card-text:last-child {
   margin-bottom: 0;

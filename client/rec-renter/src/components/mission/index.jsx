@@ -10,10 +10,15 @@ function MissionCard() {
       <h2 className="mission-header">What is Rec Renter?</h2>
       <div className="container">
         {/* <h2 className="mission-header">What is Rec Renter?</h2> */}
-        <div className="card">
+        <div className="skills">
           <div className="card-body">
             <h5 className="card-title"></h5>
-            <img width={150} height={150} src={logo}></img>
+            <img
+              width={150}
+              height={150}
+              src={logo}
+              className="img-mission"
+            ></img>
             <p className="card-text">
               Mission statement 1 : Lorem ipsum dolor, sit amet consectetur
               adipisicing elit. Optio hic culpa perspiciatis quidem odit
@@ -22,10 +27,15 @@ function MissionCard() {
             </p>
           </div>
         </div>
-        <div className="card">
-          <div className="card-body">
+        <div className="skills">
+          <div className="my-skills">
             <h5 className="card-title"></h5>
-            <img width={150} height={150} src={logo2}></img>
+            <img
+              width={150}
+              height={150}
+              src={logo2}
+              className="img-mission"
+            ></img>
             <p className="card-text">
               Mission statement 1 : Lorem ipsum dolor, sit amet consectetur
               adipisicing elit. Optio hic culpa perspiciatis quidem odit
@@ -34,10 +44,15 @@ function MissionCard() {
             </p>
           </div>
         </div>
-        <div className="card">
+        <div className="skills">
           <div className="card-body">
             <h5 className="card-title"></h5>
-            <img width={150} height={150} src={logo}></img>
+            <img
+              width={150}
+              height={150}
+              src={logo}
+              className="img-mission"
+            ></img>
             <p className="card-text">
               Mission statement 1 : Lorem ipsum dolor, sit amet consectetur
               adipisicing elit. Optio hic culpa perspiciatis quidem odit
