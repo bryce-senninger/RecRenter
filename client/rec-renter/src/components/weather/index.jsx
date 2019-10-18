@@ -6,14 +6,11 @@ function Weather() {
     <div className="container-weather">
       {/* <p>Local Weather</p> */}
       <a
-        className="weatherwidget-io"
+        class="weatherwidget-io"
         href="https://forecast7.com/en/40d76n111d89/salt-lake-city/?unit=us"
-        data-label_1="SALT LAKE CITY"
-        data-label_2="WEATHER"
-        data-theme="original"
-      >
-        SALT LAKE CITY WEATHER
-      </a>
+        data-label_1="Salt Lake City"
+        data-label_2="7 Day Forecast"
+      ></a>
     </div>
   );
 }

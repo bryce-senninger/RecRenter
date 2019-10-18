@@ -1,6 +1,9 @@
 html {
   width: 100%;
 }
+body {
+  max-width: 100%;
+}
 .App {
   text-align: center;
 }
