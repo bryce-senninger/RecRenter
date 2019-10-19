@@ -13,6 +13,26 @@ class Modal extends React.Component {
   componentWillUnmount() {
     modalRoot.removeChild(this.el);
   }
+<<<<<<< HEAD
+=======
+
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+
+    fetch("/api/user/login")
+      .then(response => response.json())
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+>>>>>>> adding multer
   render() {
     return ReactDOM.createPortal(
       <div

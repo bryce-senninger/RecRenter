@@ -12,8 +12,8 @@ const itemSchema = new Schema({
   created_at: { type: Date, default: null },
   ownerId: { type: Schema.Types.ObjectId, ref: "User" },
   renterId: { type: Schema.Types.ObjectId, ref: "User" },
-  categoryId: { type: Schema.Types.ObjectId, ref: "Category" },
-  subcategoriesId: { type: Schema.Types.ObjectId, ref: "Category" }
+  // category: { type: Schema.Types.ObjectId, ref: "Category" },
+  subcategoryId: { type: Schema.Types.ObjectId, ref: "Subcategory" }
 });
 
 const Item = mongoose.model("Item", itemSchema);
