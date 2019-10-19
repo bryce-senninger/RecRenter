@@ -1,23 +1,4 @@
-<<<<<<< HEAD
-const db = require("../models");
-=======
 const db = require("../db/models/category");
-
-const multer = require("multer");
-const crypto = require("crypto");
-
-const storage = multer.diskStorage({
-  destination: "itemImages/",
-  filename: function(req, file, callback) {
-    crypto.pseudoRandomBytes(16, function(err, raw) {
-      if (err) return callback(err);
-      callback(null, raw.toString("hex") + path.extname(file.originalname));
-    });
-  }
-});
-const upload = multer({ storage: storage });
-const sUpload = upload.single("image");
->>>>>>> adding multer
 
 module.exports = {
   findAll: function(req, res) {
