@@ -10,8 +10,8 @@ function MissionCard() {
       <h2 className="mission-header">What is Rec Renter?</h2>
       <div className="container">
         {/* <h2 className="mission-header">What is Rec Renter?</h2> */}
-        <div className="card">
-          <div className="card-body">
+        <div className="card-one">
+          <div className="card-body-one">
             <h5 className="card-title"></h5>
             <img
               width={150}
@@ -27,8 +27,8 @@ function MissionCard() {
             </p>
           </div>
         </div>
-        <div className="card">
-          <div className="card-body">
+        <div className="card-one">
+          <div className="card-body-one">
             <h5 className="card-title"></h5>
             <img
               width={150}
@@ -44,8 +44,8 @@ function MissionCard() {
             </p>
           </div>
         </div>
-        <div className="card">
-          <div className="card-body">
+        <div className="card-one">
+          <div className="card-body-one">
             <h5 className="card-title"></h5>
             <img
               width={150}
