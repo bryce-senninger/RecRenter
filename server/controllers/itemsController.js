@@ -1,13 +1,28 @@
+<<<<<<< HEAD
 const db = require("../models");
+=======
+const db = require("../db/models/category");
+
+const multer = require("multer");
+const crypto = require("crypto");
+
+const storage = multer.diskStorage({
+  destination: "itemImages/",
+  filename: function(req, file, callback) {
+    crypto.pseudoRandomBytes(16, function(err, raw) {
+      if (err) return callback(err);
+      callback(null, raw.toString("hex") + path.extname(file.originalname));
+    });
+  }
+});
+const upload = multer({ storage: storage });
+const sUpload = upload.single("image");
+>>>>>>> adding multer
 
 module.exports = {
   findAll: function(req, res) {
     db.Item.find({})
-      .populate({
-        path: "categoryId",
-        select: "category",
-        populate: [{ path: "subcategories", select: "subcategoryId" }]
-      })
+      .populate("subcategories", "name")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
   },
@@ -18,7 +33,7 @@ module.exports = {
       .catch(err => res.json(err));
   },
   create: function(req, res) {
-    db.Item.create(req.body)
+    db.Category.create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
   },

@@ -1,43 +1,55 @@
+const path = require("path");
+const crypto = require("crypto");
 const express = require("express");
 const bodyParser = require("body-parser");
 const multer = require("multer");
-const path = require("path");
-const fs = require("fs");
-const PORT = process.env.PORT || 3001;
-
+const passport = require("passport");
 const app = express();
 const routes = require("./routes");
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+const PORT = process.env.PORT || 3001;
+
+app.use(express.static("public"));
+app.use(express.static(__dirname + "/itemImages"));
+
+app.use(session({ secret: "Charp", resave: true, saveUninitialized: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(passport.initialize());
+app.use(passport.session());
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// SET STORAGE
-var storage = multer.memoryStorage();
-
-var upload = multer({
-  storage: storage,
-  onFileUploadStart: function(file) {
-    console.log(file.originalname + " is starting ...");
-  }
-}).single("img");
-//define API routes here
-
 const mongoose = require("mongoose");
 const mongoURL = process.env.MONGODB_URI || "mongodb://localhost/RecRenter";
+
 mongoose
   .connect(mongoURL, { useNewUrlParser: true, useFindAndModify: false })
   .then(() => {
-    console.log("💻 ==> Connetected!!");
+    console.log("💻 ==> Database Connected!!");
   })
   .catch(err => {
     console.log(`Error connecting to Mongo: ${err}`);
   });
 
+const storage = multer.diskStorage({
+  destination: "itemImages/",
+  filename: function(req, file, callback) {
+    crypto.pseudoRandomBytes(16, function(err, raw) {
+      if (err) return callback(err);
+      callback(null, raw.toString("hex") + path.extname(file.originalname));
+    });
+  }
+});
+const upload = multer({ storage: storage });
+const sUpload = upload.single("image");
+
+app.post("/uploadedphotos", sUpload, (req, res) => {
+  console.log(req.body);
+  res.sendStatus(200);
+});
 app.use(routes);
 
 app.post("/uploadedphoto", (req, res) => {
