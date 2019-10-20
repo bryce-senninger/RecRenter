@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 
 const subcategorySchema = new Schema({
   title: String
-  // categoryId: { type: Schema.Types.ObjectId, ref: "Category" }
 });
 
 const schema = new Schema({
