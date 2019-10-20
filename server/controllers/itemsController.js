@@ -3,13 +3,13 @@ const Item = require("../models/item");
 module.exports = {
   findAll: function(req, res) {
     Item.find({})
-      .populate("subcategoryId")
+      .populate("subcategoryId reviewId")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
   },
   findById: function(req, res) {
     Item.findById({ _id: req.params.id })
-      .populate("subcategory")
+      .populate("subcategoryId")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
   },
