@@ -13,8 +13,6 @@ class Modal extends React.Component {
   componentWillUnmount() {
     modalRoot.removeChild(this.el);
   }
-<<<<<<< HEAD
-=======
 
   handleChange(event) {
     this.setState({
@@ -32,7 +30,6 @@ class Modal extends React.Component {
       });
   }
 
->>>>>>> adding multer
   render() {
     return ReactDOM.createPortal(
       <div

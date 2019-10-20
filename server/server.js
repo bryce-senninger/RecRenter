@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3001;
 app.use(express.static("public"));
 app.use(express.static(__dirname + "/itemImages"));
 
-app.use(session({ secret: "Charp", resave: true, saveUninitialized: true }));
+// app.use(session({ secret: "Charp", resave: true, saveUninitialized: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(passport.initialize());
@@ -24,15 +24,6 @@ if (process.env.NODE_ENV === "production") {
 
 const mongoose = require("mongoose");
 const mongoURL = process.env.MONGODB_URI || "mongodb://localhost/RecRenter";
-
-mongoose
-  .connect(mongoURL, { useNewUrlParser: true, useFindAndModify: false })
-  .then(() => {
-    console.log("💻 ==> Database Connected!!");
-  })
-  .catch(err => {
-    console.log(`Error connecting to Mongo: ${err}`);
-  });
 
 const storage = multer.diskStorage({
   destination: "itemImages/",
@@ -50,6 +41,7 @@ app.post("/uploadedphotos", sUpload, (req, res) => {
   console.log(req.body);
   res.sendStatus(200);
 });
+
 app.use(routes);
 
 app.post("/uploadedphoto", (req, res) => {
@@ -74,6 +66,15 @@ app.post("/uploadedphoto", (req, res) => {
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
+
+mongoose
+  .connect(mongoURL, { useNewUrlParser: true, useFindAndModify: false })
+  .then(() => {
+    console.log("💻 ==> Database Connected!!");
+  })
+  .catch(err => {
+    console.log(`Error connecting to Mongo: ${err}`);
+  });
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
