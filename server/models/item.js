@@ -12,7 +12,6 @@ const itemSchema = new Schema({
   created_at: { type: Date, default: null },
   ownerId: { type: Schema.Types.ObjectId, ref: "User" },
   renterId: { type: Schema.Types.ObjectId, ref: "User" },
-  // category: { type: Schema.Types.ObjectId, ref: "Category" },
   subcategoryId: { type: Schema.Types.ObjectId, ref: "Subcategory" }
 });
 
