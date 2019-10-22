@@ -1,7 +1,7 @@
 import React from "react";
-import icon from "./mountain.png";
+// import icon from "./mountain.png";
 import logo from "./logo-3.png";
-import lock from "./lock.png";
+// import lock from "./lock.png";
 import "../navBar/style-nav.css";
 import Modal from "../modal";
 
@@ -12,9 +12,9 @@ class NavBar extends React.Component {
   render() {
     return (
       // <div>
-      <div class="navbar-expand-lg ">
+      <div className="navbar-expand-lg ">
         <button
-          class="navbar-toggler ml-auto"
+          className="navbar-toggler ml-auto"
           type="button"
           data-toggle="collapse"
           data-target="#navCollapse"
@@ -24,11 +24,11 @@ class NavBar extends React.Component {
           aria-label="Toggle navigation"
         >
           {/* &#9776; */}
-          <span class="navbar-toggler-icon">&#9776;</span>
+          <span className="navbar-toggler-icon">&#9776;</span>
         </button>
         <ul className="nav">
           <li className="nav-item">
-            <img width={50} height={50} src={logo}></img>
+            <img alt="" width={50} height={50} src={logo}></img>
           </li>
           <li></li>
           <div className="collapse navbar-collapse" id="navCollapse">
@@ -38,7 +38,7 @@ class NavBar extends React.Component {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="searchlistings">
                 Search
               </a>
             </li>
@@ -48,7 +48,7 @@ class NavBar extends React.Component {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="savedlistings">
                 Saved Posts
               </a>
             </li>
@@ -59,7 +59,7 @@ class NavBar extends React.Component {
                 className="btn btn-primary pull-right"
                 onClick={this.handleShowMessageClick}
               >
-                Sign Up / Log In
+                Log In
                 {/* <img src={lock} alt="" /> */}
               </button>
 

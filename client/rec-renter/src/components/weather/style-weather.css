@@ -7,7 +7,6 @@
 }
 
 a {
-  margin-top: 117px;
   width: 645px;
 }
 .container-weather {
@@ -45,4 +44,8 @@ a {
   -ms-flex-pack: distribute;
   justify-content: space-around;
   max-width: 43.75rem;
+}
+
+.weatherwidget-io {
+  font-size: 0;
 }

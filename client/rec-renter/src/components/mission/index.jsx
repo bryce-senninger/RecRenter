@@ -2,6 +2,12 @@ import React from "react";
 import "../mission/style-mission.css";
 import logo from "./mission-one-2.png";
 import logo2 from "./mission-one.png";
+<<<<<<< HEAD
+=======
+import tree from "./ecology.png";
+import money from "./save-money.png";
+import bike from "./ski.png";
+>>>>>>> 78bbb8213bfe5082fa4fcf64b14485d8ac8d3351
 // import icon from "./tree.png";
 
 function MissionCard() {
@@ -12,52 +18,57 @@ function MissionCard() {
         {/* <h2 className="mission-header">What is Rec Renter?</h2> */}
         <div className="card-one">
           <div className="card-body-one">
-            <h5 className="card-title"></h5>
             <img
+              alt=""
               width={150}
               height={150}
-              src={logo}
+              src={tree}
               className="img-mission"
             ></img>
             <p className="card-text">
-              Mission statement 1 : Lorem ipsum dolor, sit amet consectetur
-              adipisicing elit. Optio hic culpa perspiciatis quidem odit
-              temporibus velit illum mollitia facere asperiores alias dicta
-              molestias vel dolorum libero dolorem, debitis nostrum cupiditate.
+              At the heart of our mission is a love and appreciation of the
+              outdoors. We believe that by sharing recreational gear we can
+              reduce the ecological impact of product maintenence and
+              production, while simultaneously promoting a love and appreciation
+              of all the beauty that is to be found just outside our front
+              doors.
             </p>
           </div>
         </div>
         <div className="card-one">
           <div className="card-body-one">
-            <h5 className="card-title"></h5>
             <img
+              alt=""
               width={150}
               height={150}
-              src={logo2}
+              src={bike}
               className="img-mission"
             ></img>
             <p className="card-text">
-              Mission statement 1 : Lorem ipsum dolor, sit amet consectetur
-              adipisicing elit. Optio hic culpa perspiciatis quidem odit
-              temporibus velit illum mollitia facere asperiores alias dicta
-              molestias vel dolorum libero dolorem, debitis nostrum cupiditate.
+              Up next, supporting the love and passion our users have for
+              outdoor activities. By making it easy, accessible, and affordable
+              for users to explore new recreational hobbies we hope to expose
+              people to new experiences and passions they may not have otherwise
+              found. With Rec Renter, planning your next adventure is just a few
+              clicks away.
             </p>
           </div>
         </div>
         <div className="card-one">
           <div className="card-body-one">
-            <h5 className="card-title"></h5>
             <img
+              alt=""
               width={150}
               height={150}
-              src={logo}
+              src={money}
               className="img-mission"
             ></img>
             <p className="card-text">
-              Mission statement 1 : Lorem ipsum dolor, sit amet consectetur
-              adipisicing elit. Optio hic culpa perspiciatis quidem odit
-              temporibus velit illum mollitia facere asperiores alias dicta
-              molestias vel dolorum libero dolorem, debitis nostrum cupiditate.
+              And lastly, our mission of helping our users make and save money.
+              Outdoor hobbies can be expensive, and we provide individuals a way
+              to make money back off their purchases, while also promoting a
+              marketplace where renters can locate gear without paying brick and
+              mortar rental markups.
             </p>
           </div>
         </div>

@@ -49,8 +49,8 @@ module.exports = {
       }
     });
   },
-  login: function() {
-    pass("local", {
+  login: function(err, res) {
+    authenticate("local", {
       successRedirect: "/",
       failureRedirect: "/login",
       failureFlash: true
