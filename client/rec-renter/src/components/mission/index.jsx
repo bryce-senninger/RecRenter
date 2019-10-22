@@ -2,7 +2,7 @@ import React from "react";
 import "../mission/style-mission.css";
 import logo from "./mission-one-2.png";
 import logo2 from "./mission-one.png";
-import icon from "./tree.png";
+// import icon from "./tree.png";
 
 function MissionCard() {
   return (

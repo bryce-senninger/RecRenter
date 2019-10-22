@@ -1,7 +1,8 @@
 import React from "react";
-import SignUp from "../../pages/signup";
+// import SignUp from "../../pages/signup";
+// import { PromiseProvider } from "mongoose";
 
-function SignUpForm() {
+function SignUpForm(props) {
   return (
     <div id="wrapper">
       <div class="">
@@ -10,7 +11,11 @@ function SignUpForm() {
           <p>Tell us a bit about your rad self</p>
         </div>
         <hr />
-        <form>
+        <form
+          method="POST"
+          action="http://localhost:3001/api/user/signup"
+          // encType="multipart/form-data"
+        >
           <div class="form-row">
             <div class="col-md-6 mb-3">
               <label for="validationDefault01">First Name</label>
@@ -19,6 +24,9 @@ function SignUpForm() {
                 class="form-control"
                 id="name"
                 placeholder="First"
+                name="firstname"
+                value={props.firstname}
+                onChange={props.handleChange}
                 required
               />
             </div>
@@ -29,6 +37,9 @@ function SignUpForm() {
                 class="form-control"
                 id="validationDefault02"
                 placeholder="Last"
+                name="lastname"
+                value={props.lastname}
+                onChange={props.handleChange}
                 required
               />
             </div>
@@ -41,6 +52,9 @@ function SignUpForm() {
                 class="form-control"
                 id="city"
                 placeholder="City"
+                name="city"
+                value={props.city}
+                onChange={props.handleChange}
                 required
               />
             </div>
@@ -51,6 +65,9 @@ function SignUpForm() {
                 class="form-control"
                 id="validationDefault04"
                 placeholder="State"
+                name="state"
+                value={props.state}
+                onChange={props.handleChange}
                 required
               >
                 <option value="" selected disabled hidden>
@@ -118,6 +135,9 @@ function SignUpForm() {
                 class="form-control"
                 id="validationDefault05"
                 placeholder="Zip"
+                name="zip"
+                value={props.zip}
+                onChange={props.handleChange}
                 required
               />
             </div>
@@ -130,6 +150,9 @@ function SignUpForm() {
               id="email"
               aria-describedby="emailHelp"
               placeholder="email@sample.com"
+              name="email"
+              value={props.email}
+              onChange={props.handleChange}
             />
           </div>
           <div class="form-group">
@@ -140,6 +163,9 @@ function SignUpForm() {
               id="username"
               aria-describedby="emailHelp"
               placeholder="skibum420"
+              name="username"
+              value={props.username}
+              onChange={props.handleChange}
             />
           </div>
           <div class="form-group">
@@ -150,9 +176,16 @@ function SignUpForm() {
               id="email"
               aria-describedby="emailHelp"
               placeholder="password"
+              name="password"
+              value={props.password}
+              onChange={props.handleChange}
             />
           </div>
-          <form>
+          <form
+          // method="POST"
+          // action="http://localhost:3001/api/user/signup"
+          // enctype="multipart/form-data"
+          >
             <div class="form-group">
               <label for="exampleFormControlFile1">
                 Upload a Photo to Your Profile
@@ -160,12 +193,19 @@ function SignUpForm() {
               <input
                 type="file"
                 class="form-control-file"
-                id="exampleFormControlFile1"
+                id="imagePath"
+                name="imagePath"
+                value={props.imagePath}
+                onChange={props.handleChange}
               />
             </div>
           </form>
         </form>
-        <button class="btn btn-primary submit" type="submit">
+        <button
+          class="btn btn-primary submit"
+          type="submit"
+          onClick={props.handleSubmit}
+        >
           Sign Up
         </button>
       </div>
