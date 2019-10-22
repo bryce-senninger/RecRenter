@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Header from "../components/header";
-import MissionCard from "../components/mission";
-import News from "../components/news";
-import Weather from "../components/weather";
-import Featured from "../components/featuredPosts";
+// import Header from "../components/header";
+// import MissionCard from "../components/mission";
+// import News from "../components/news";
+// import Weather from "../components/weather";
+// import Featured from "../components/featuredPosts";
 import SignUpForm from "../components/signUpForm";
 
 class SignUp extends Component {

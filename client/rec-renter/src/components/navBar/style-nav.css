@@ -2,24 +2,27 @@ a {
   color: black;
 }
 .btn {
-  color: black;
-  top: 5rem;
-  right: 5rem;
+  color: rgb(238, 231, 231);
+  /* top: 5rem;
+  right: 5rem; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  margin: 2px 2px 2px 2px;
-  background-color: white;
-  transition: transform 650ms ease-out;
-  border-style: double;
-  border-color: black;
-  margin-top: 13px;
+  /* margin: 2px 2px 2px 2px; */
+  background-color: rgb(29, 29, 29);
+  /* transition: transform 650ms ease-out; */
+  border-style: solid;
+  border-color: rgb(252, 252, 252);
+  border-width: 2px;
+  /* margin-top: 13px; */
   font-weight: 600;
+  margin-top: 22px;
 }
 .btn:hover {
-  color: white;
-  background-color: black;
+  transform: scale(1.1);
+  color: rgb(27, 27, 27);
+  background-color: rgb(255, 255, 255);
   border-color: black;
 }
 .ml-auto,
@@ -38,14 +41,15 @@ li {
   margin-top: 14px;
   padding: 0.5rem 1rem;
   font-weight: 600;
-  background: linear-gradient(to top, #000000, black, white);
+  /* background: linear-gradient(to top, #000000, black, white); */
+  background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* font-family: "Libre Barcode 128 Text", cursive; */
   font-size: 16px;
 }
 .nav-link:hover {
-  background: linear-gradient(to top, #4776e6, #8e54e9, #000000, #20bdff);
+  background: linear-gradient(to top, #a7a7a7, #5e5e5e, #000000, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -160,4 +164,34 @@ button:not(:disabled) {
     padding-top: 10px;
     text-decoration: underline black;
   }
+}
+
+.navbar-expand-lg {
+  overflow: hidden;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(207, 209, 203, 0.9),
+    rgba(91, 109, 99, 0.95)
+  );
+  height: 110px;
+  border-bottom: 3px solid black;
+}
+
+.navbar-expand-lg a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar-expand-lg a:hover {
+  border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+.navbar-expand-lg a.active {
+  border-bottom: 2px solid rgb(255, 255, 255);
 }

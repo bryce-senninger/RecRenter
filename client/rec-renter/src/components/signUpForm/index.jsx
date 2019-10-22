@@ -1,54 +1,54 @@
 import React from "react";
-import SignUp from "../../pages/signup";
+// import SignUp from "../../pages/signup";
 
 function SignUpForm() {
   return (
     <div id="wrapper">
-      <div class="">
-        <h1 class="display-4">Rec Renter Sign Up</h1>
+      <div className="">
+        <h1 className="display-4">Rec Renter Sign Up</h1>
         <div id="headText">
           <p>Tell us a bit about your rad self</p>
         </div>
         <hr />
         <form>
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
+          <div className="form-row">
+            <div className="col-md-6 mb-3">
               <label for="validationDefault01">First Name</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="name"
                 placeholder="First"
                 required
               />
             </div>
-            <div class="col-md-6 mb-3">
+            <div className="col-md-6 mb-3">
               <label for="validationDefault02">Last Name</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="validationDefault02"
                 placeholder="Last"
                 required
               />
             </div>
           </div>
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
+          <div className="form-row">
+            <div className="col-md-6 mb-3">
               <label for="validationDefault03">City</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="city"
                 placeholder="City"
                 required
               />
             </div>
-            <div class="col-md-3 mb-3">
+            <div className="col-md-3 mb-3">
               <label for="validationDefault04">State</label>
               <select
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="validationDefault04"
                 placeholder="State"
                 required
@@ -107,65 +107,65 @@ function SignUpForm() {
                 <option value="WV">West Virginia</option>
                 <option value="WI">Wisconsin</option>
                 <option value="WY">Wyoming</option>
-                type="text" class="form-control" id="validationDefault04"
+                type="text" className="form-control" id="validationDefault04"
                 placeholder="State" required
               </select>
             </div>
-            <div class="col-md-3 mb-3">
+            <div className="col-md-3 mb-3">
               <label for="validationDefault05">Zip</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="validationDefault05"
                 placeholder="Zip"
                 required
               />
             </div>
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label for="exampleInputEmail1">Email Address</label>
             <input
               type="email"
-              class="form-control"
+              className="form-control"
               id="email"
               aria-describedby="emailHelp"
               placeholder="email@sample.com"
             />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label for="exampleInputEmail1">Username</label>
             <input
               type="username"
-              class="form-control"
+              className="form-control"
               id="username"
               aria-describedby="emailHelp"
               placeholder="skibum420"
             />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label for="exampleInputEmail1">Password</label>
             <input
               type="password"
-              class="form-control"
+              className="form-control"
               id="email"
               aria-describedby="emailHelp"
               placeholder="password"
             />
           </div>
           <form>
-            <div class="form-group">
+            <div className="form-group">
               <label for="exampleFormControlFile1">
                 Upload a Photo to Your Profile
               </label>
               <input
                 type="file"
-                class="form-control-file"
+                className="form-control-file"
                 id="exampleFormControlFile1"
               />
             </div>
           </form>
         </form>
-        <button class="btn btn-primary submit" type="submit">
+        <button className="btn btn-primary submit" type="submit">
           Sign Up
         </button>
       </div>

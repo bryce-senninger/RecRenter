@@ -4,14 +4,13 @@ import "../header/style-header.css";
 
 function Header() {
   return (
-    <div className="jumbotron">
+    <div className="jumbotron landingJumbo">
       <h1 className="display-4">Rec Renter</h1>
       <p className="lead">
-        A simple way to find and list rentals for recrational gear.
+        A simple way to find and list rentals for recrational gear
       </p>
       {/* <p className="lead">rentals for recrational gear.</p> */}
-      <p className="lead">Plan your next adventure, make</p>
-      <p className="lead"> a memory that lasts.</p>
+      <p className="lead">Plan your next adventure, make a memory that lasts</p>
     </div>
   );
 }

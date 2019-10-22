@@ -33,6 +33,14 @@
       href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kalam&display=swap"
+      rel="stylesheet"
+    />
     <!-- Icon/Web Address Bar -->
     <link
       rel="shortcut icon"
@@ -89,5 +97,20 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $(".carousel").carousel({ interval: 12000 });
+      });
+    </script>
+    <script>
+      $(document).ready(function() {
+        $(".nav .nav-link").on("click", function() {
+          $(".nav")
+            .find(".active")
+            .removeClass("active");
+          $(this).addClass("active");
+        });
+      });
+    </script>
   </body>
 </html>

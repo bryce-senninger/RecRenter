@@ -1,0 +1,28 @@
+.slide1 {
+  background-image: url("./vorarlberg-4046557_1920.jpg");
+  background-size: cover;
+  -moz-background-size: cover;
+}
+
+.slide2 {
+  background-image: url("./utah-95032_1920.jpg");
+  background-size: cover;
+  -moz-background-size: cover;
+}
+
+.slide3 {
+  background-image: url("./mountain-climbing-802099_1920.jpg");
+  background-size: cover;
+  -moz-background-size: cover;
+}
+
+.carousel {
+  height: 100%;
+  z-index: -99;
+}
+
+.carousel-item {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}

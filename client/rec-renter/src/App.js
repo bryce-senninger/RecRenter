@@ -6,6 +6,7 @@ import SignUp from "./pages/signup";
 import NavBar from "./components/navBar";
 import Footer from "./components/footer";
 import PostListing from "./pages/postlisting";
+import Carousel from "./components/carousel";
 // import News from "./components/news";
 // import Weather from "./components/weather";
 
@@ -22,6 +23,7 @@ class App extends React.Component {
           }}
         >
           <Router>
+            <Carousel />
             <NavBar />
             <div className="wrapper">
               <Switch>
