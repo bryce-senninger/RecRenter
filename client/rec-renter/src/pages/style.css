@@ -5,8 +5,8 @@
   /* background-color: black; */
   background-image: linear-gradient(
     to bottom,
-    rgba(207, 209, 203, 0.9),
-    rgba(91, 109, 99, 0.95)
+    rgba(207, 209, 203, 0.85),
+    rgba(91, 109, 99, 0.85)
   );
   /* color: white; */
   background-size: cover;
