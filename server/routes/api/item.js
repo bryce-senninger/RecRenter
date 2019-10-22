@@ -1,10 +1,11 @@
 const router = require("express").Router();
 const itemsController = require("../../controllers/itemsController");
+const path = require("path");
 const multer = require("multer");
 const crypto = require("crypto");
 
 const storage = multer.diskStorage({
-  destination: "itemImages/",
+  destination: "public/itemImages/",
   filename: function(req, file, callback) {
     crypto.pseudoRandomBytes(16, function(err, raw) {
       if (err) return callback(err);
@@ -13,7 +14,7 @@ const storage = multer.diskStorage({
   }
 });
 const upload = multer({ storage: storage });
-const sUpload = upload.single("image");
+const sUpload = upload.single("imagePath");
 
 router
   // lines up this /item
