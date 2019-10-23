@@ -10,14 +10,9 @@ class PostListing extends Component {
 
   //lifecycle methods
   //functional methods
-  setCategory = id => {
-    this.state.options.find((Param, i) => {
-      if (Param.id === id) {
-        this.setState({ category: options[i].category });
-        console.log(this.state.category);
-      }
-      return false;
-    });
+  setCategory = event => {
+    this.setState({ category: "hello" });
+    console.log(this.state.category);
   };
 
   render() {
@@ -27,11 +22,13 @@ class PostListing extends Component {
         <CardWrap>
           {this.state.options.map(option => (
             <CategoryCard
-              handleIncrement={this.setCategory}
+              setCategory={this.setCategory}
               key={option.id}
               id={option.id}
               name={option.name}
               image={option.image}
+              category={option.category}
+              value={option.category}
             />
           ))}
         </CardWrap>

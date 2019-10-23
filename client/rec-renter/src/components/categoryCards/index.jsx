@@ -6,11 +6,14 @@ function CategoryCard(props) {
     <div>
       <div className="card categoryCard">
         <img
-          onClick={() => props.setCategory(props.id)}
+          className="categoryImg"
+          onClick={() => props.setCategory}
           key={props.id}
           id={props.id}
           alt={props.name}
           src={props.image}
+          category={props.category}
+          value={props.category}
         />
         <div>
           <h2 className="categoryNames">{props.name}</h2>
