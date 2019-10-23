@@ -7,6 +7,7 @@
   border-radius: 2px;
   height: 250px;
   margin: 1.5rem;
+  position: relative;
   width: 512px;
   box-shadow: 0 6px 9px #999, 0 6px 9px rgb(0, 0, 0);
   text-align: left;
