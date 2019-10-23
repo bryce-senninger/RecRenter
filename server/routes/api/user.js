@@ -22,7 +22,10 @@ router
   .get(usersController.findAll);
 
 router.route("/signup").post(usersController.signup);
-router.route("/login").post(usersController.login);
+router
+  .route("/login")
+  .get(usersController.login)
+  .post(usersController.login);
 
 // router.route("/login").get();
 

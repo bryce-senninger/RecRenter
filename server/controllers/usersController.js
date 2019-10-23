@@ -38,14 +38,14 @@ module.exports = {
           } else {
             res.send(user);
           }
-          passport.authenticate("local", {
-            failureRedirect: "/login",
-            successRedirect: "/"
-          }),
-            function(req, res) {
-              res.send("hey");
-            };
         });
+        passport.authenticate("local", {
+          failureRedirect: "/login",
+          successRedirect: "/"
+        }),
+          function(req, res) {
+            res.send("/");
+          };
       }
     });
   },

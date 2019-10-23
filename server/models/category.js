@@ -7,7 +7,8 @@ const subcategorySchema = new Schema({
 
 const schema = new Schema({
   title: String,
-  subcategoryId: [{ type: Schema.ObjectId, ref: "Subcategory" }]
+  image: String,
+  subcategories: [{ type: Schema.ObjectId, ref: "Subcategory" }]
 });
 
 module.exports = {
