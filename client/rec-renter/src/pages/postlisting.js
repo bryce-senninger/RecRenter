@@ -45,7 +45,7 @@ class PostListing extends Component {
               setCategory={this.setCategory}
               key={option.id}
               id={option.id}
-              name={option.title}
+              name={option.name}
               image={option.image}
               category={option.category}
               value={option.category}
