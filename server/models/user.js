@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const bcrypt = require("bcrypt");
 
 const userSchema = new Schema({
   username: { type: String, required: true, uniqe: true },
@@ -11,9 +12,17 @@ const userSchema = new Schema({
   city: String,
   state: String,
   zip: Number,
-  photo: { data: Buffer, type: String },
+  imagePath: { data: Buffer, contentType: String },
   rating: Number
 });
+
+userSchema.methods.hashPassword = function(password) {
+  return bcrypt.hashSync(password, bcrypt.genSaltSync(10));
+};
+
+userSchema.methods.comparePassword = function(password, hash) {
+  return bcrypt.compareSync(password, hash);
+};
 
 const User = mongoose.model("User", userSchema);
 

@@ -1,34 +1,30 @@
-const db = require("../models");
+const Item = require("../models/item");
 
 module.exports = {
   findAll: function(req, res) {
-    db.Item.find({})
-      .populate({
-        path: "categoryId",
-        select: "category",
-        populate: [{ path: "subcategories", select: "subcategoryId" }]
-      })
+    Item.find({})
+      .populate("subcategoryId reviewId")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
   },
   findById: function(req, res) {
-    db.Item.findById(req.params.id)
-      .populate("categoryId")
+    Item.findById({ _id: req.params.id })
+      .populate("subcategoryId")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
   },
   create: function(req, res) {
-    db.Item.create(req.body)
+    Item.create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
   },
   update: function(req, res) {
-    db.Item.findOneAndUpdate({ _id: req.params.id }, req.body)
+    Item.findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
   },
   remove: function(req, res) {
-    db.Item.findById({ _id: req.params.id })
+    Item.findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));

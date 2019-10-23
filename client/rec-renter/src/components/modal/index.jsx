@@ -6,6 +6,17 @@ import "../modal/style-modal.css";
 const modalRoot = document.getElementById("modal-root");
 
 class Modal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: "",
+      password: ""
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
   el = document.createElement("div");
   componentDidMount() {
     modalRoot.appendChild(this.el);
@@ -13,6 +24,30 @@ class Modal extends React.Component {
   componentWillUnmount() {
     modalRoot.removeChild(this.el);
   }
+
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log(this.state);
+
+    fetch("http://localhost:3001/api/user/login", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(this.state)
+    })
+      .then(function(result) {
+        return result.json();
+      })
+      .then(info => console.log(info));
+  }
+
   render() {
     return ReactDOM.createPortal(
       <div
@@ -45,12 +80,26 @@ class Modal extends React.Component {
         >
           {this.props.children}
           <hr />
-          <input placeholder="  Username"></input>
-          <hr />
-          <input placeholder="  Password"></input>
-          <hr />
-          <button onClick={this.props.onClose}>Log In</button>
-          <hr />
+          <form method="POST" action="http://localhost:3001/api/user/login">
+            <input
+              placeholder="Username"
+              type="text"
+              name="username"
+              value={this.state.username}
+              onChange={this.handleChange}
+            />
+            <hr />
+            <input
+              placeholder="Password"
+              type="password"
+              name="password"
+              value={this.state.password}
+              onChange={this.handleChange}
+            />
+            <hr />
+            <button onClick={this.handleSubmit}>Log In</button>
+            <hr />
+          </form>
           <a href="/signup">Not a member? Click here to sign up</a>
         </div>
       </div>,

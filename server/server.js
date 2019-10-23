@@ -1,64 +1,47 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const multer = require("multer");
 const path = require("path");
-const fs = require("fs");
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const passport = require("passport");
+const session = require("express-session");
+const app = express();
 const PORT = process.env.PORT || 3001;
 
-const app = express();
-const routes = require("./routes");
+require("./passport")(passport);
+const routes = require("./routes/index", passport);
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.static("public"));
+app.use(express.static(__dirname + "/itemImages"));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cors());
+app.use(
+  session({
+    secret: "thesecret",
+    saveUninitialized: false,
+    resave: false
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(routes);
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-
-// SET STORAGE
-var storage = multer.memoryStorage();
-
-var upload = multer({
-  storage: storage,
-  onFileUploadStart: function(file) {
-    console.log(file.originalname + " is starting ...");
-  }
-}).single("img");
-//define API routes here
-
+// REQUIRE MONGOOSE AND CONNECTION TO DATABASE //
 const mongoose = require("mongoose");
 const mongoURL = process.env.MONGODB_URI || "mongodb://localhost/RecRenter";
+
 mongoose
   .connect(mongoURL, { useNewUrlParser: true, useFindAndModify: false })
   .then(() => {
-    console.log("💻 ==> Connetected!!");
+    console.log("💻 ==> Database Connected!!");
   })
   .catch(err => {
     console.log(`Error connecting to Mongo: ${err}`);
   });
 
-app.use(routes);
-
-app.post("/uploadedphoto", (req, res) => {
-  var img = fs.readFileSync(req.file.path);
-  var encode_image = img.toString("base64");
-  // Define a JSONobject for the image attributes for saving to database
-
-  var finalImg = {
-    contentType: req.file.mimetype,
-    photo: new Buffer(encode_image, "base64")
-  };
-  db.collection("users").insertOne(finalImg, (err, result) => {
-    console.log(result);
-
-    if (err) return console.log(err);
-
-    console.log("saved to database");
-    res.redirect("/");
-  });
-});
-
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });

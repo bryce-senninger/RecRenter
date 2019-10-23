@@ -4,7 +4,7 @@ import "../mission/style-mission.css";
 // import logo2 from "./mission-one.png";
 import tree from "./ecology.png";
 import money from "./save-money.png";
-import bike from "./ski.png";
+import bike from "./bike.png";
 // import icon from "./tree.png";
 
 function MissionCard() {

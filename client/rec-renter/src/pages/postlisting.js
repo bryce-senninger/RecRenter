@@ -6,9 +6,29 @@ import CardWrap from "../components/cardWrap";
 import "./style.css";
 
 class PostListing extends Component {
-  state = { options, category: undefined };
+  // state = { options, category: undefined };
+  state = { options };
 
   //lifecycle methods
+  componentDidMount() {
+    fetch("http://localhost:3001/api/category", {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json"
+      }
+      // body: JSON.stringify(this.state)
+    })
+      .then(function(result) {
+        return result.json();
+      })
+
+      .then(info => {
+        console.log(info);
+        this.setState({ options: info });
+        console.log(this.state);
+      });
+  }
+
   //functional methods
   setCategory = event => {
     this.setState({ category: "hello" });
@@ -25,7 +45,7 @@ class PostListing extends Component {
               setCategory={this.setCategory}
               key={option.id}
               id={option.id}
-              name={option.name}
+              name={option.title}
               image={option.image}
               category={option.category}
               value={option.category}
