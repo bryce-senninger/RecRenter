@@ -6,14 +6,36 @@ import CardWrap from "../components/cardWrap";
 import "./style.css";
 
 class PostListing extends Component {
-  state = { options, category: undefined };
+  // state = { options, category: undefined };
+  state = { options };
 
   //lifecycle methods
+  componentDidMount() {
+    fetch("http://localhost:3001/api/category", {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json"
+      }
+      // body: JSON.stringify(this.state)
+    })
+      .then(function(result) {
+        return result.json();
+      })
+
+      .then(info => {
+        console.log(info);
+        this.setState({ options: info });
+        console.log(this.state);
+      });
+  }
+
   //functional methods
   setCategory = id => {
-    this.state.options.find((Param, i) => {
-      if (Param.id === id) {
-        this.setState({ category: options[i].category });
+    this.state.options.find((p, i) => {
+      if (p.id === id) {
+        let category = options[i];
+
+        this.setState({ category });
         console.log(this.state.category);
       }
       return false;
@@ -27,10 +49,10 @@ class PostListing extends Component {
         <CardWrap>
           {this.state.options.map(option => (
             <CategoryCard
-              handleIncrement={this.setCategory}
+              // onClick={this.setCategory}
               key={option.id}
               id={option.id}
-              name={option.name}
+              name={option.title}
               image={option.image}
             />
           ))}

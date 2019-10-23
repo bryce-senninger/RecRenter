@@ -192,29 +192,20 @@ function SignUpForm(props) {
               </label>
               <input
                 type="file"
-<<<<<<< HEAD
                 class="form-control-file"
                 id="imagePath"
                 name="imagePath"
                 value={props.imagePath}
                 onChange={props.handleChange}
-=======
-                className="form-control-file"
-                id="exampleFormControlFile1"
->>>>>>> 78bbb8213bfe5082fa4fcf64b14485d8ac8d3351
               />
             </div>
           </form>
         </form>
-<<<<<<< HEAD
         <button
           class="btn btn-primary submit"
           type="submit"
           onClick={props.handleSubmit}
         >
-=======
-        <button className="btn btn-primary submit" type="submit">
->>>>>>> 78bbb8213bfe5082fa4fcf64b14485d8ac8d3351
           Sign Up
         </button>
       </div>

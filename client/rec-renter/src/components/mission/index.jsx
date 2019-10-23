@@ -1,13 +1,8 @@
 import React from "react";
 import "../mission/style-mission.css";
-import logo from "./mission-one-2.png";
-import logo2 from "./mission-one.png";
-<<<<<<< HEAD
-=======
 import tree from "./ecology.png";
 import money from "./save-money.png";
-import bike from "./ski.png";
->>>>>>> 78bbb8213bfe5082fa4fcf64b14485d8ac8d3351
+import bike from "./bike.png";
 // import icon from "./tree.png";
 
 function MissionCard() {
