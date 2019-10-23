@@ -1,63 +1,62 @@
-.card {
-  background: rgb(29, 177, 197);
+.categoryCard {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(207, 209, 203, 0.85),
+    rgba(91, 109, 99, 0.85)
+  );
   border-radius: 2px;
-  height: auto;
+  height: 250px;
   margin: 1.5rem;
   position: relative;
-  width: auto;
+  width: 512px;
   box-shadow: 0 6px 9px #999, 0 6px 9px rgb(0, 0, 0);
   text-align: left;
   border: solid 4px rgb(0, 0, 0);
   padding: 2px;
-  border-radius: 25px;
+  border-radius: 15px;
+  opacity: 0.95;
+  transition: all 0.25s ease-in-out;
 }
 
-.card:hover {
+.categoryCard:hover {
   transform: scale(1.1);
+  cursor: pointer;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(105, 105, 105, 0.85),
+    rgba(52, 63, 57, 0.85)
+  );
 }
 
-img {
-  object-fit: contain;
-  border-radius: 20px;
+.categoryImg {
+  height: 200px;
+  width: 200px;
 }
 
-.card:hover {
-  animation: shake 0.9s;
-  animation-iteration-count: infinite;
+.categoryNames {
+  position: absolute;
+
+  padding: 0;
+  margin-right: 253px;
+  color: white;
+  font-size: 50px;
+  margin: 0 auto;
+  font-family: sans-serif;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
-@keyframes shake {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-  10% {
-    transform: translate(-1px, -1px) rotate(-0.5deg);
-  }
-  20% {
-    transform: translate(-1px, 0px) rotate(0.5deg);
-  }
-  30% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-  40% {
-    transform: translate(1px, -1px) rotate(0.5deg);
-  }
-  50% {
-    transform: translate(-1px, 1px) rotate(-0.5deg);
-  }
-  60% {
-    transform: translate(-1px, 1px) rotate(0deg);
-  }
-  70% {
-    transform: translate(1px, 1px) rotate(-0.5deg);
-  }
-  80% {
-    transform: translate(-1px, -1px) rotate(0.5deg);
-  }
-  90% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-  100% {
-    transform: translate(1px, -1px) rotate(-0.5deg);
-  }
+.categoryCard:hover .categoryNames {
+  width: 250px;
+  padding: 0;
+  width: auto;
+  visibility: visible;
+  opacity: 0.7;
+  height: 56px;
+  left: 50%;
+  margin-left: -66px;
+  top: 50%;
+  margin-top: -20px;
 }

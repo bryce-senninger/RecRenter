@@ -1,32 +1,38 @@
 [
   {
     "id": 1,
-    "category": "Snow Sports",
-    "image": "./assets/1.png"
+    "name": "Snow",
+    "image": "./assets/snowflake.png",
+    "category": "Snow Sports"
   },
   {
     "id": 2,
-    "name": "Water Sports",
-    "image": "./assets/2.png"
+    "name": "Water",
+    "image": "./assets/drop.png",
+    "category": "Water Sports"
   },
   {
     "id": 3,
-    "name": "Biking",
-    "image": "./assets/3.png"
+    "name": "Bike",
+    "image": "./assets/bicycle.png",
+    "category": "Biking"
   },
   {
     "id": 4,
-    "name": "Camping",
-    "image": "./assets/4.png"
+    "name": "Camp",
+    "image": "./assets/tent.png",
+    "category": "Camping"
   },
   {
     "id": 5,
     "name": "Vertical",
-    "image": "./assets/5.png"
+    "image": "./assets/climbing.png",
+    "category": "Vertical"
   },
   {
     "id": 6,
     "name": "Misc",
-    "image": "./assets/6.png"
+    "image": "./assets/help.png",
+    "category": "Misc"
   }
 ]

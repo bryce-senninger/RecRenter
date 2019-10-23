@@ -30,16 +30,9 @@ class PostListing extends Component {
   }
 
   //functional methods
-  setCategory = id => {
-    this.state.options.find((p, i) => {
-      if (p.id === id) {
-        let category = options[i];
-
-        this.setState({ category });
-        console.log(this.state.category);
-      }
-      return false;
-    });
+  setCategory = event => {
+    this.setState({ category: "hello" });
+    console.log(this.state.category);
   };
 
   render() {
@@ -49,11 +42,13 @@ class PostListing extends Component {
         <CardWrap>
           {this.state.options.map(option => (
             <CategoryCard
-              // onClick={this.setCategory}
+              setCategory={this.setCategory}
               key={option.id}
               id={option.id}
               name={option.title}
               image={option.image}
+              category={option.category}
+              value={option.category}
             />
           ))}
         </CardWrap>
