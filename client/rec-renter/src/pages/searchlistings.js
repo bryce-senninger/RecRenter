@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import PostHeader from "../components/postHeader";
+import SearchHeader from "../components/searchHeader";
 import CategoryCard from "../components/categoryCards";
 import options from "../options.json";
 import CardWrap from "../components/cardWrap";
 import "./style.css";
 import PostForm from "../components/postForm";
 
-class PostListing extends Component {
+class SearchListings extends Component {
   // state = { options, category: undefined };
   state = { options };
 
@@ -39,7 +39,7 @@ class PostListing extends Component {
   render() {
     return (
       <div className="App">
-        <PostHeader />
+        <SearchHeader />
         <CardWrap>
           {this.state.options.map(option => (
             <CategoryCard
@@ -53,10 +53,9 @@ class PostListing extends Component {
             />
           ))}
         </CardWrap>
-        <PostForm />
       </div>
     );
   }
 }
 
-export default PostListing;
+export default SearchListings;

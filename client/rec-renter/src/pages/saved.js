@@ -1,14 +1,10 @@
 import React, { Component } from "react";
-import PostHeader from "../components/postHeader";
-import CategoryCard from "../components/categoryCards";
-import options from "../options.json";
-import CardWrap from "../components/cardWrap";
+import SavedHeader from "../components/savedHeader";
 import "./style.css";
-import PostForm from "../components/postForm";
 
-class PostListing extends Component {
+class SavedListings extends Component {
   // state = { options, category: undefined };
-  state = { options };
+  state = {};
 
   //lifecycle methods
   // componentDidMount() {
@@ -39,24 +35,10 @@ class PostListing extends Component {
   render() {
     return (
       <div className="App">
-        <PostHeader />
-        <CardWrap>
-          {this.state.options.map(option => (
-            <CategoryCard
-              setCategory={this.setCategory}
-              key={option.id}
-              id={option.id}
-              name={option.name}
-              image={option.image}
-              category={option.category}
-              value={option.category}
-            />
-          ))}
-        </CardWrap>
-        <PostForm />
+        <SavedHeader />
       </div>
     );
   }
 }
 
-export default PostListing;
+export default SavedListings;
