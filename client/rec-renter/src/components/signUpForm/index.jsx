@@ -1,4 +1,5 @@
 import React from "react";
+import "../signUpForm/style-form.css";
 // import SignUp from "../../pages/signup";
 // import { PromiseProvider } from "mongoose";
 

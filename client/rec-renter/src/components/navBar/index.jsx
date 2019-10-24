@@ -4,6 +4,7 @@ import logo from "./logo-3.png";
 // import lock from "./lock.png";
 import "../navBar/style-nav.css";
 import Modal from "../modal";
+import newlogo from "./new-logo-white.png";
 
 class NavBar extends React.Component {
   state = { showModal: false };
@@ -28,7 +29,7 @@ class NavBar extends React.Component {
         </button>
         <ul className="nav">
           <li className="nav-item">
-            <img alt="" width={50} height={50} src={logo}></img>
+            <img alt="" width={50} height={50} src={newlogo}></img>
           </li>
           <li></li>
           <div className="collapse navbar-collapse" id="navCollapse">
@@ -38,17 +39,17 @@ class NavBar extends React.Component {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="searchlistings">
+              <a className="nav-link active" href="searchlistings">
                 Search
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="postlisting">
+              <a className="nav-link active" href="postlisting">
                 Post
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="savedlistings">
+              <a className="nav-link active" href="savedlistings">
                 Saved Posts
               </a>
             </li>

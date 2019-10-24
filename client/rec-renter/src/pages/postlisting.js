@@ -10,24 +10,24 @@ class PostListing extends Component {
   state = { options };
 
   //lifecycle methods
-  componentDidMount() {
-    fetch("http://localhost:3001/api/category", {
-      method: "GET",
-      headers: {
-        "Content-type": "application/json"
-      }
-      // body: JSON.stringify(this.state)
-    })
-      .then(function(result) {
-        return result.json();
-      })
+  // componentDidMount() {
+  //   fetch("http://localhost:3001/api/category", {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-type": "application/json"
+  //     }
+  //     // body: JSON.stringify(this.state)
+  //   })
+  //     .then(function(result) {
+  //       return result.json();
+  //     })
 
-      .then(info => {
-        console.log(info);
-        this.setState({ options: info });
-        console.log(this.state);
-      });
-  }
+  //     .then(info => {
+  //       console.log(info);
+  //       this.setState({ options: info });
+  //       console.log(this.state);
+  //     });
+  // }
 
   //functional methods
   setCategory = event => {

@@ -3,23 +3,35 @@ import "../mission/style-mission.css";
 // import logo from "./mission-one-2.png";
 // import logo2 from "./mission-one.png";
 import tree from "./ecology.png";
-import money from "./save-money.png";
+// import money from "./save-money.png";
 import bike from "./bike.png";
-// import icon from "./tree.png";
+import icon from "./tree4.png";
+import money from "./money.png";
+// import mountain
 
 function MissionCard() {
   return (
     <>
-      <h2 className="mission-header">What is Rec Renter?</h2>
+      <h2
+        className="mission-header"
+        data-aos="zoom-in-down"
+        data-aos-duration="2000"
+      >
+        What is Rec Renter?
+      </h2>
       <div className="container">
         {/* <h2 className="mission-header">What is Rec Renter?</h2> */}
-        <div className="card-one">
+        <div
+          className="card-one"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           <div className="card-body-one">
             <img
               alt=""
               width={150}
               height={150}
-              src={tree}
+              src={icon}
               className="img-mission"
             ></img>
             <p className="card-text">
@@ -32,7 +44,7 @@ function MissionCard() {
             </p>
           </div>
         </div>
-        <div className="card-one">
+        <div className="card-one" data-aos="fade-up" data-aos-duration="1000">
           <div className="card-body-one">
             <img
               alt=""
@@ -51,7 +63,7 @@ function MissionCard() {
             </p>
           </div>
         </div>
-        <div className="card-one">
+        <div className="card-one" data-aos="fade-left" data-aos-duration="1000">
           <div className="card-body-one">
             <img
               alt=""
