@@ -5,9 +5,9 @@ function CategoryCard(props) {
   return (
     <div
       className="card categoryCard"
-      onClick={props.handleClick}
-      key={props._id}
-      id={props._id}
+      onClick={e => props.handleClick(props.id, e)}
+      key={props.id}
+      id={props.id}
     >
       <img
         className="categoryImg"

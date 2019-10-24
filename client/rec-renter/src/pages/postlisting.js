@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PostHeader from "../components/postHeader";
 import CategoryCard from "../components/categoryCards";
-import options from "../options.json";
+// import options from "../options.json";
 import CardWrap from "../components/cardWrap";
 import "./style.css";
 import PostForm from "../components/postForm";
@@ -30,9 +30,9 @@ class PostListing extends Component {
       });
   }
   // componentDidUpdate() {
-  handleClick = function(e) {
+  handleClick = function(id, event) {
     // console.log(this.state.query);
-    fetch("http://localhost:3001/api/category/:id")
+    fetch("http://localhost:3001/api/category/" + id)
       .then(function(result) {
         return result.json();
         // console.log(result);

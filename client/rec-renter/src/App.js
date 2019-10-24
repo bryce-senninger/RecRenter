@@ -6,7 +6,7 @@ import SignUp from "./pages/signup";
 import NavBar from "./components/navBar";
 import Footer from "./components/footer";
 import PostListing from "./pages/postlisting";
-import Carousel from "./components/carousel";
+// import Carousel from "./components/carousel";
 import SearchListings from "./pages/searchlistings";
 import SavedListings from "./pages/saved";
 // import News from "./components/news";
