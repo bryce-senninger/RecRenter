@@ -32,21 +32,24 @@ class PostListing extends Component {
   // componentDidUpdate() {
   handleClick = function(e) {
     // console.log(this.state.query);
-    fetch("http://localhost:3001/api/category/:id")
-      .then(function(result) {
-        return result.json();
-      })
-      .then(category => {
-        console.log(category);
-        // this.setState({
-        // query: ""
-        // });
-      })
-      .catch(err => {
-        if (err) {
-          console.log(err);
-        }
-      });
+    fetch(
+      "http://localhost:3001/api/category/:id"
+        .then(function(result) {
+          return result.json();
+          // console.log(result);
+        })
+        .then(category => {
+          console.log(category);
+          // this.setState({
+          // query: ""
+          // });
+        })
+        .catch(err => {
+          if (err) {
+            console.log(err);
+          }
+        })
+    );
   };
   // }
   //functional methods

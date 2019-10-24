@@ -9,7 +9,7 @@ module.exports = {
   },
   findOne: function(req, res) {
     // let id = JSON.stringify(req.params.id);
-    Category.findById({ _id: req.params._id })
+    Category.findOne({ name: req.body.name })
       .populate({
         path: "subcategories",
         select: "name"
