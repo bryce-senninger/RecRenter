@@ -1,6 +1,6 @@
 import React from "react";
 // import icon from "./mountain.png";
-import logo from "./logo-3.png";
+// import logo from "./logo-3.png";
 import { Link } from "react-router-dom";
 // import lock from "./lock.png";
 import "../navBar/style-nav.css";
@@ -34,7 +34,7 @@ class NavBar extends React.Component {
           </li>
           <li></li>
           <div className="collapse navbar-collapse" id="navCollapse">
-            <li className="nav-item active">
+            <li className="nav-item">
               <Link
                 to="/"
                 className={
@@ -49,9 +49,9 @@ class NavBar extends React.Component {
 
             <li className="nav-item">
               <Link
-                to="/searchlisting"
+                to="/searchlistings"
                 className={
-                  window.location.pathname === "/searchlisting"
+                  window.location.pathname === "/searchlistings"
                     ? "nav-link active"
                     : "nav-link"
                 }
