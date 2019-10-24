@@ -4,23 +4,24 @@ import CategoryCard from "../components/categoryCards";
 import options from "../options.json";
 import CardWrap from "../components/cardWrap";
 import "./style.css";
+import PostForm from "../components/postForm";
 
 class PostListing extends Component {
   state = { options: null, query: null };
   // state = { options: null };
 
   //lifecycle methods
-  componentDidMount() {
-    fetch("http://localhost:3001/api/category", {
-      method: "GET",
-      headers: {
-        "Content-type": "application/json"
-      }
-      // body: JSON.stringify(this.state)
-    })
-      .then(function(result) {
-        return result.json();
-      })
+  // componentDidMount() {
+  //   fetch("http://localhost:3001/api/category", {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-type": "application/json"
+  //     }
+  //     // body: JSON.stringify(this.state)
+  //   })
+  //     .then(function(result) {
+  //       return result.json();
+  //     })
 
       .then(info => {
         // console.log(info);
@@ -75,6 +76,7 @@ class PostListing extends Component {
               ))
             : ""}
         </CardWrap>
+        <PostForm />
       </div>
     );
   }
