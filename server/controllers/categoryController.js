@@ -8,8 +8,8 @@ module.exports = {
       .catch(err => res.json(err));
   },
   findOne: function(req, res) {
-    // let id = JSON.stringify(req.params.id);
-    Category.findOne({ name: req.body.name })
+    let id = req.params.id;
+    Category.findOne({ _id: id })
       .populate({
         path: "subcategories",
         select: "name"
