@@ -128,6 +128,17 @@ const bikesMisc = new Subcategory({ name: "Misc" });
 bikesMisc.save();
 eCategory.subcategories.push(bikesMisc);
 
-eCategory.save((err, data) => {
+eCategory.save((err, data) => {});
+
+const fCategory = new Category({
+  name: "Misc",
+  image: "../../../assets/help.png"
+});
+
+const Miscmisc = new Subcategory({ name: "Misc" });
+Miscmisc.save();
+fCategory.subcategories.push(Miscmisc);
+
+fCategory.save((err, data) => {
   mongoose.disconnect();
 });

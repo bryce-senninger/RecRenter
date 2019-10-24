@@ -12,6 +12,9 @@ class PostListing extends Component {
 
   //lifecycle methods
   componentDidMount() {
+    this.getCategories();
+  }
+  getCategories = () => {
     fetch("http://localhost:3001/api/category", {
       method: "GET",
       headers: {
@@ -27,27 +30,19 @@ class PostListing extends Component {
         // console.log(info);
         this.setState({ options: info });
         // console.log(this.state.options);
-      });
-  }
+      })
+      .catch(err => console.log(err));
+  };
+
   // componentDidUpdate() {
-  handleClick = function(e) {
+  handleClick = function(event) {
+    const category = event.target.click;
     // console.log(this.state.query);
-    fetch("http://localhost:3001/api/category/:id")
-      .then(function(result) {
-        return result.json();
-        // console.log(result);
-      })
-      .then(category => {
-        console.log(category);
-        // this.setState({
-        // query: ""
-        // });
-      })
-      .catch(err => {
-        if (err) {
-          console.log(err);
-        }
-      });
+    fetch(`http://localhost:3001/api/category/:id`, category)
+      .then(result => result.json())
+      // console.log(result);
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
   };
   // }
   //functional methods
@@ -66,8 +61,8 @@ class PostListing extends Component {
                 <CategoryCard
                   // setCategory={this.setCategory}
                   handleClick={this.handleClick}
-                  key={option._id}
-                  id={option._id}
+                  key={option.id}
+                  id={option.id}
                   name={option.name}
                   subCategories={option.subcategories}
                   image={option.image}

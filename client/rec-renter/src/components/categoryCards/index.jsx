@@ -5,9 +5,10 @@ function CategoryCard(props) {
   return (
     <div
       className="card categoryCard"
+      onChange={props.handleClickInput}
       onClick={props.handleClick}
-      key={props._id}
-      id={props._id}
+      key={props.id}
+      id={props.id}
     >
       <img
         className="categoryImg"
