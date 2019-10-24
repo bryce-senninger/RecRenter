@@ -1,6 +1,7 @@
 import React from "react";
 // import icon from "./mountain.png";
 import logo from "./logo-3.png";
+import { Link } from "react-router-dom";
 // import lock from "./lock.png";
 import "../navBar/style-nav.css";
 import Modal from "../modal";
@@ -33,25 +34,54 @@ class NavBar extends React.Component {
           </li>
           <li></li>
           <div className="collapse navbar-collapse" id="navCollapse">
-            <li className="nav-item">
-              <a className="nav-link active" href="/">
+            <li className="nav-item active">
+              <Link
+                to="/"
+                className={
+                  window.location.pathname === "/"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
                 Home
-              </a>
+              </Link>
             </li>
+
             <li className="nav-item">
-              <a className="nav-link active" href="searchlistings">
+              <Link
+                to="/searchlisting"
+                className={
+                  window.location.pathname === "/searchlisting"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
                 Search
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="postlisting">
+              <Link
+                to="/postlisting"
+                className={
+                  window.location.pathname === "/postlisting"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
                 Post
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="savedlistings">
+              <Link
+                to="/savedlistings"
+                className={
+                  window.location.pathname === "/savedlistings"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
                 Saved Posts
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item ml-auto">
