@@ -3,16 +3,18 @@ import "./style.css";
 
 function CategoryCard(props) {
   return (
-    <div className="card categoryCard">
+    <div
+      className="card categoryCard"
+      onClick={props.handleClick}
+      key={props._id}
+      id={props._id}
+    >
       <img
         className="categoryImg"
-        onClick={props.handleClick}
-        key={props.id}
-        id={props.id}
         alt={props.name}
         src={props.image}
         category={props.name}
-        value={props.category}
+        value={props.value}
       />
       <div>
         <h2 className="categoryNames">{props.name}</h2>

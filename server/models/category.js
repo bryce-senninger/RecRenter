@@ -6,7 +6,7 @@ const subcategorySchema = new Schema({
 });
 
 const schema = new Schema({
-  id: { type: mongoose.Types.ObjectId },
+  // _id: { type: mongoose.Types.ObjectId, unique: true },
   name: String,
   image: String,
   subcategories: [{ type: mongoose.Types.ObjectId, ref: "Subcategory" }]

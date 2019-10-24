@@ -8,13 +8,16 @@ module.exports = {
       .catch(err => res.json(err));
   },
   findOne: function(req, res) {
-    // let id = req.params.id;
-    Category.findOne(req.body)
-      // .then(dbModel => res.json(dbModel))
-      .populate({ path: "subategories", select: "name" })
+    // let id = JSON.stringify(req.params.id);
+    Category.findById({ _id: req.params._id })
+      .populate({
+        path: "subcategories",
+        select: "name"
+      })
       .then(function(result) {
         res.send(result);
-      });
+      })
+      .catch(err => res.json(err));
 
     // .then(dbModel => res.json(dbModel))
     // .catch(err => res.json(err));
