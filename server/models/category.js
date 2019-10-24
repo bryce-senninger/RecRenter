@@ -2,13 +2,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const subcategorySchema = new Schema({
-  title: String
+  name: String
 });
 
 const schema = new Schema({
-  title: String,
+  // _id: { type: mongoose.Types.ObjectId, unique: true },
+  name: String,
   image: String,
-  subcategories: [{ type: Schema.ObjectId, ref: "Subcategory" }]
+  subcategories: [{ type: mongoose.Types.ObjectId, ref: "Subcategory" }]
 });
 
 module.exports = {

@@ -7,51 +7,75 @@ import "./style.css";
 import PostForm from "../components/postForm";
 
 class PostListing extends Component {
-  // state = { options, category: undefined };
-  state = { options };
+  state = { options: null, query: null };
+  // state = { options: null };
 
   //lifecycle methods
-  // componentDidMount() {
-  //   fetch("http://localhost:3001/api/category", {
-  //     method: "GET",
-  //     headers: {
-  //       "Content-type": "application/json"
-  //     }
-  //     // body: JSON.stringify(this.state)
-  //   })
-  //     .then(function(result) {
-  //       return result.json();
-  //     })
+  componentDidMount() {
+    fetch("http://localhost:3001/api/category", {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json"
+      }
+      // body: JSON.stringify(this.state)
+    })
+      .then(function(result) {
+        return result.json();
+      })
 
-  //     .then(info => {
-  //       console.log(info);
-  //       this.setState({ options: info });
-  //       console.log(this.state);
-  //     });
-  // }
-
-  //functional methods
-  setCategory = event => {
-    this.setState({ category: "hello" });
-    console.log(this.state.category);
+      .then(info => {
+        // console.log(info);
+        this.setState({ options: info });
+        // console.log(this.state.options);
+      });
+  }
+  // componentDidUpdate() {
+  handleClick = function(e) {
+    // console.log(this.state.query);
+    fetch("http://localhost:3001/api/category/:id")
+      .then(function(result) {
+        return result.json();
+        // console.log(result);
+      })
+      .then(category => {
+        console.log(category);
+        // this.setState({
+        // query: ""
+        // });
+      })
+      .catch(err => {
+        if (err) {
+          console.log(err);
+        }
+      });
   };
+  // }
+  //functional methods
+  // setCategory = event => {
+  //   this.setState({ category: "hello" });
+  //   console.log(this.state.category);
+  // };
 
   render() {
     return (
       <div className="App">
         <PostHeader />
         <CardWrap>
-          {this.state.options.map(option => (
-            <CategoryCard
-              setCategory={this.setCategory}
-              key={option.id}
-              id={option.id}
-              name={option.name}
-              image={option.image}
-              category={option.category}
-              value={option.category}
-            />
-          ))}
+          {this.state.options
+            ? this.state.options.map(option => (
+                <CategoryCard
+                  // setCategory={this.setCategory}
+                  handleClick={this.handleClick}
+                  key={option._id}
+                  id={option._id}
+                  name={option.name}
+                  subCategories={option.subcategories}
+                  image={option.image}
+                  category={option.name}
+                  value={option.category}
+                />
+              ))
+            : ""}
         </CardWrap>
         <PostForm />
       </div>
