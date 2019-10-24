@@ -3,11 +3,13 @@
   margin: auto;
   margin-bottom: 97px;
   /* background-color: black; */
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to bottom,
     rgba(207, 209, 203, 0.85),
     rgba(91, 109, 99, 0.85)
-  );
+  ); */
+  background-image: linear-gradient(to bottom, #7996e6, #d7dde8, white);
+  width: 95%;
   /* color: white; */
   background-size: cover;
   padding: 30px;

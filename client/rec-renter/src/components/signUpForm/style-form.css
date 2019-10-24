@@ -1,0 +1,25 @@
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
+  color: white;
+  border: white;
+  border-style: double;
+  margin: auto;
+}
+
+.form-control-file,
+.form-control-range {
+  /* display: block; */
+  /* width: 100%; */
+  text-align: center;
+  margin: auto;
+  margin-left: 10px;
+}

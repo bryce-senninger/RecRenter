@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 // import lock from "./lock.png";
 import "../navBar/style-nav.css";
 import Modal from "../modal";
+import newlogo from "./new-logo-white.png";
 
 class NavBar extends React.Component {
   state = { showModal: false };
@@ -29,7 +30,7 @@ class NavBar extends React.Component {
         </button>
         <ul className="nav">
           <li className="nav-item">
-            <img alt="" width={50} height={50} src={logo}></img>
+            <img alt="" width={50} height={50} src={newlogo}></img>
           </li>
           <li></li>
           <div className="collapse navbar-collapse" id="navCollapse">

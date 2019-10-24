@@ -25,7 +25,7 @@ class App extends React.Component {
           }}
         >
           <Router>
-            <Carousel />
+            {/* <Carousel /> */}
             <NavBar />
             <div className="wrapper">
               <Switch>
