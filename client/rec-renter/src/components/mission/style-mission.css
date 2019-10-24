@@ -18,15 +18,17 @@
   padding: 2rem;
   border-style: none;
   padding-top: 2px;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to bottom,
-    rgba(207, 209, 203, 0.85),
-    rgba(91, 109, 99, 0.85)
-  );
+    rgb(207, 209, 203),
+    white,
+    white
+  ); */
+  /* background-image: linear-gradient(to bottom, #7996e6, #d7dde8, white); */
   margin: 25px;
-  border: 3px solid black;
+  /* border: 3px solid black; */
   border-radius: 10px;
-  height: 100%;
+  height: 92%;
   transition: all 0.25s ease-in-out;
   /* grid-template-columns: 1fr 1fr 1fr; */
 }
@@ -54,16 +56,14 @@
   font-family: "Libre Barcode 128 Text", cursive;
   font-size: 63px;
   margin-bottom: 50px;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(207, 209, 203, 0.85),
-    rgba(91, 109, 99, 0.85)
-  );
+  /* background-image: linear-gradient(to bottom, white); */
+  background-color: black;
+  color: white;
   width: 40%;
   margin: 0 auto;
   margin-bottom: 40px;
   margin-top: 200px;
-  border: 3px solid black;
+  border: 3px solid white;
   border-radius: 10px;
   transition: all 0.25s ease-in-out;
   padding: 15px;
@@ -79,4 +79,11 @@
 
 .card-text {
   padding: 5px;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+  padding: 3px;
+  padding-top: 1px;
+  padding-bottom: 0px;
 }
