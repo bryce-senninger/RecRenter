@@ -12,6 +12,9 @@ a {
 .container-weather {
   margin: auto;
   max-width: 1000px;
+  box-shadow: 0 3px 70px #929, 0 12px 4px rgb(0, 0, 0);
+  border: solid 3px rgb(255, 255, 255);
+  border-radius: 15px;
   /* float: left; */
   /* grid: none; */
 }
