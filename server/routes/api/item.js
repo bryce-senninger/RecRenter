@@ -20,7 +20,7 @@ router
   // lines up this /item
   .route("/")
   .get(itemsController.findAll)
-  .post(sUpload, itemsController.create);
+  .post(sUpload, itemsController.createItem);
 
 router
   // lines up with /item/:id

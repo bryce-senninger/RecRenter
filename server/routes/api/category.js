@@ -6,6 +6,7 @@ router
   .route("/")
   .get(categoryController.findAll);
 
+// lines up with /api/category/:id
 router.route("/:id").get(categoryController.findOne);
 
 module.exports = router;

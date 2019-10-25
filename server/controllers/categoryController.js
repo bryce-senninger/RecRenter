@@ -18,8 +18,5 @@ module.exports = {
         res.send(result);
       })
       .catch(err => res.json(err));
-
-    // .then(dbModel => res.json(dbModel))
-    // .catch(err => res.json(err));
   }
 };
