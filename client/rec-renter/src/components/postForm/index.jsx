@@ -15,8 +15,8 @@ function PostForm(props) {
         <hr />
         <form
           method="POST"
-          //   action="http://localhost:3001/api/user/signup"
-          // encType="multipart/form-data"
+          action="http://localhost:3001/api/item"
+          encType="multipart/form-data"
         >
           <div className="form-row">
             <div className="col-md-6 mb-3">
@@ -24,8 +24,9 @@ function PostForm(props) {
               <input
                 type="text"
                 className="form-control"
+                name="title"
                 placeholder="e.g. 'Mountain Bike'"
-                value={props.item.postTitle}
+                value={props.title}
                 onChange={props.handleChange}
                 required
               />
@@ -35,8 +36,9 @@ function PostForm(props) {
               <input
                 type="text"
                 className="form-control"
+                name="location"
                 placeholder="e.g. 'Salt Lake City'"
-                value={props.item.location}
+                value={props.location}
                 onChange={props.handleChange}
                 required
               />
@@ -45,9 +47,19 @@ function PostForm(props) {
           <div className="form-row">
             <div className="col-md-4 mb-2">
               <label htmlFor="exampleInputEmail1">Sub-Category</label>
-              <select className="form-control">
+
+              <select className="form-control" onChange={props.handleChange}>
                 {props.category.subcategories.map(index => {
-                  return <option data-id={index._id}>{index.name}</option>;
+                  return (
+                    <option
+                      data-id={index._id}
+                      value={index._id}
+                      name={props.value}
+                      key={index._id}
+                    >
+                      {index.name}
+                    </option>
+                  );
                 })}
               </select>
             </div>
@@ -58,8 +70,9 @@ function PostForm(props) {
               <input
                 type="text"
                 className="form-control"
+                name="price"
                 placeholder="e.g. 25.00"
-                value={props.item.price}
+                value={props.price}
                 onChange={props.handleChange}
               />
             </div>
@@ -69,8 +82,9 @@ function PostForm(props) {
               </label>
               <input
                 type="file"
+                name="imagePath"
                 // className="form-control-file form-control"
-                value={props.item.imagePath}
+                value={props.imagePath}
                 onChange={props.handleChange}
               />
             </div>

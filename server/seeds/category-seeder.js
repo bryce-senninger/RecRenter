@@ -13,7 +13,10 @@ const aCategory = new Category({
   image: "../../../assets/snowflake.png"
 });
 
-const ski = new Subcategory({ name: "Skiing" });
+const ski = new Subcategory({
+  name: "Skiing",
+  image: "../../../assets/snowflake.png"
+});
 ski.save();
 aCategory.subcategories.push(ski);
 const snowboard = new Subcategory({ name: "Snowboarding" });
