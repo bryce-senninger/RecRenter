@@ -4,7 +4,7 @@ import CategoryCard from "../components/categoryCards";
 import options from "../options.json";
 import CardWrap from "../components/cardWrap";
 import "./style.css";
-import PostForm from "../components/postForm";
+// import PostForm from "../components/postForm";
 
 class SearchListings extends Component {
   // state = { options, category: undefined };

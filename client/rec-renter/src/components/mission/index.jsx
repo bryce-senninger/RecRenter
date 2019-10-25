@@ -2,7 +2,7 @@ import React from "react";
 import "../mission/style-mission.css";
 // import logo from "./mission-one-2.png";
 // import logo2 from "./mission-one.png";
-import tree from "./ecology.png";
+// import tree from "./ecology.png";
 // import money from "./save-money.png";
 import bike from "./bike.png";
 import icon from "./tree4.png";

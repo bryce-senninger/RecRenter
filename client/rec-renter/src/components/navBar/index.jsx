@@ -1,6 +1,6 @@
 import React from "react";
 // import icon from "./mountain.png";
-import logo from "./logo-3.png";
+// import logo from "./logo-3.png";
 import { Link } from "react-router-dom";
 // import lock from "./lock.png";
 import "../navBar/style-nav.css";

@@ -3,21 +3,22 @@ import "./style.css";
 
 function CategoryCard(props) {
   return (
-    <div>
-      <div className="card categoryCard">
-        <img
-          className="categoryImg"
-          onClick={() => props.setCategory}
-          key={props.id}
-          id={props.id}
-          alt={props.name}
-          src={props.image}
-          category={props.category}
-          value={props.category}
-        />
-        <div>
-          <h2 className="categoryNames">{props.name}</h2>
-        </div>
+    <div
+      className="card categoryCard"
+      onClick={e => props.handleClick(props.id, e)}
+      key={props.id}
+      id={props.id}
+    >
+      <img
+        className="categoryImg"
+        alt={props.name}
+        src={props.image}
+        category={props.name}
+        value={props.value}
+        subcategory={props.subCategory}
+      />
+      <div>
+        <h2 className="categoryNames">{props.name}</h2>
       </div>
     </div>
   );

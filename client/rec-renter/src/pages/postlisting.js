@@ -1,39 +1,88 @@
 import React, { Component } from "react";
 import PostHeader from "../components/postHeader";
 import CategoryCard from "../components/categoryCards";
-import options from "../options.json";
+// import options from "../options.json";
 import CardWrap from "../components/cardWrap";
 import "./style.css";
 import PostForm from "../components/postForm";
 
 class PostListing extends Component {
-  // state = { options, category: undefined };
-  state = { options };
+  state = {
+    options: null,
+    category: null,
+    item: {
+      title: "",
+      description: "",
+      location: "",
+      imagePath: "",
+      price: "",
+      subcategoryId: ""
+    }
+  };
 
   //lifecycle methods
-  // componentDidMount() {
-  //   fetch("http://localhost:3001/api/category", {
-  //     method: "GET",
-  //     headers: {
-  //       "Content-type": "application/json"
-  //     }
-  //     // body: JSON.stringify(this.state)
-  //   })
-  //     .then(function(result) {
-  //       return result.json();
-  //     })
+  componentDidMount() {
+    this.getCategories();
+  }
+  getCategories = () => {
+    fetch("http://localhost:3001/api/category", {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json"
+      }
+    })
+      .then(function(result) {
+        return result.json();
+      })
 
-  //     .then(info => {
-  //       console.log(info);
-  //       this.setState({ options: info });
-  //       console.log(this.state);
-  //     });
-  // }
+      .then(info => {
+        this.setState({ options: info });
+      })
+      .catch(err => console.log(err));
+  };
 
-  //functional methods
-  setCategory = event => {
-    this.setState({ category: "hello" });
-    console.log(this.state.category);
+  handleClick = id => {
+    fetch("http://localhost:3001/api/category/" + id)
+      .then(function(result) {
+        return result.json();
+        // console.log(result);
+      })
+      .then(category => {
+        // console.log(category);
+        this.setState({
+          category: category,
+          options: null
+        });
+        console.log(this.state.category);
+      })
+      .catch(err => {
+        if (err) {
+          console.log(err);
+        }
+      });
+  };
+
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+  handleSubmit = event => {
+    event.preventDefault();
+    console.log(this.state);
+
+    fetch("http://localhost:3001/api/item", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(this.state.item)
+    })
+      .then(function(result) {
+        return result.json();
+      })
+
+      .then(item => console.log(item));
   };
 
   render() {
@@ -41,19 +90,31 @@ class PostListing extends Component {
       <div className="App">
         <PostHeader />
         <CardWrap>
-          {this.state.options.map(option => (
-            <CategoryCard
-              setCategory={this.setCategory}
-              key={option.id}
-              id={option.id}
-              name={option.name}
-              image={option.image}
-              category={option.category}
-              value={option.category}
-            />
-          ))}
+          {this.state.options
+            ? this.state.options.map(option => (
+                <CategoryCard
+                  handleClick={this.handleClick}
+                  key={option._id}
+                  id={option._id}
+                  name={option.name}
+                  // subCategories={option.subcategories}
+                  image={option.image}
+                  category={option.name}
+                  value={option.category}
+                />
+              ))
+            : ""}
         </CardWrap>
-        <PostForm />
+        <PostForm
+          handleChange={this.handleChange}
+          postTitle={this.state.title}
+          location={this.state.location}
+          subcategory={this.state.subcategoryId}
+          price={this.state.price}
+          imagePath={this.state.imagePath}
+          description={this.state.description}
+          handleSubmit={this.handleSubmit}
+        />
       </div>
     );
   }
