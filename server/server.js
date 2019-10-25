@@ -5,10 +5,19 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 const session = require("express-session");
 const app = express();
+const cloudinary = require("cloudinary");
+var multipart = require("connect-multiparty");
+var multipartMiddleware = multipart();
 const PORT = process.env.PORT || 3001;
 
 require("./passport")(passport);
 const routes = require("./routes/index", passport);
+
+cloudinary.config({
+  cloud_name: "dqpccnwco",
+  api_key: "442876256574885",
+  api_secret: "9yurGnuwemrGwR90gIdL7d3_wdQ"
+});
 
 app.use(express.static("public"));
 app.use(express.static(__dirname + "/itemImages"));

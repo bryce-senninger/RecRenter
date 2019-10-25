@@ -4,6 +4,7 @@ import "../postForm/style-post.css";
 // import { PromiseProvider } from "mongoose";
 
 function PostForm(props) {
+  console.log(props);
   return (
     <div id="wrapper">
       <div className="">
@@ -23,10 +24,8 @@ function PostForm(props) {
               <input
                 type="text"
                 className="form-control"
-                id="name"
                 placeholder="e.g. 'Mountain Bike'"
-                name="posttitle"
-                value={props.postTitle}
+                value={props.item.postTitle}
                 onChange={props.handleChange}
                 required
               />
@@ -36,10 +35,8 @@ function PostForm(props) {
               <input
                 type="text"
                 className="form-control"
-                id="location"
                 placeholder="e.g. 'Salt Lake City'"
-                name="location"
-                value={props.location}
+                value={props.item.location}
                 onChange={props.handleChange}
                 required
               />
@@ -49,11 +46,9 @@ function PostForm(props) {
             <div className="col-md-4 mb-2">
               <label htmlFor="exampleInputEmail1">Sub-Category</label>
               <select className="form-control">
-                <option>Default select</option>
-                <option>Default select</option>
-                <option>Default select</option>
-                <option>Default select</option>
-                <option>Default select</option>
+                {props.category.subcategories.map(index => {
+                  return <option data-id={index._id}>{index.name}</option>;
+                })}
               </select>
             </div>
             <div className="col-md-4 mb-2">
@@ -61,12 +56,10 @@ function PostForm(props) {
                 Asking Rental Price Per Day
               </label>
               <input
-                type="price"
+                type="text"
                 className="form-control"
-                id="price"
                 placeholder="e.g. 25.00"
-                name="email"
-                value={props.price}
+                value={props.item.price}
                 onChange={props.handleChange}
               />
             </div>
@@ -77,9 +70,7 @@ function PostForm(props) {
               <input
                 type="file"
                 // className="form-control-file form-control"
-                id="imagePath"
-                name="imagePath"
-                value={props.imagePath}
+                value={props.item.imagePath}
                 onChange={props.handleChange}
               />
             </div>
