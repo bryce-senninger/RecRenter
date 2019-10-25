@@ -10,7 +10,7 @@ function PostForm(props) {
       <div className="">
         <h1 className="display-4">Post Your Gear for Rent</h1>
         <div id="headText">
-          <p>Tell us a bit about yourself and your listing</p>
+          <p>Tell us a bit about your listing</p>
         </div>
         <hr />
         <form
