@@ -88,6 +88,7 @@ class NavBar extends React.Component {
               {/* <img src={lock} alt="" /> */}
               <button
                 className="btn btn-primary pull-right"
+                id="button-nav"
                 onClick={this.handleShowMessageClick}
               >
                 Log In

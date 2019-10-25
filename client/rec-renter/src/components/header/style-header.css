@@ -51,13 +51,19 @@ html:not(.no-js) [data-aos^="fade"][data-aos^="fade"].aos-animate {
 
 .jumbotron {
   margin-top: 20px;
-  box-shadow: 0 0 0 2pt rgb(255, 255, 255);
-  border: solid 8px rgb(0, 0, 0);
+  /* box-shadow: 0 60px 74px black, 0 24px 141px rgb(0, 0, 0); */
+  /* box-shadow: 0 0 0 2pt rgb(255, 255, 255); */
+  /* border: solid 8px rgb(0, 0, 0); */
   border-radius: 15px;
 }
 
 .jumboWrap {
   width: 95%;
   margin: 0 auto;
-  box-shadow: 0 3px 90px #929, 0 12px 4px rgb(0, 0, 0);
+  box-shadow: 0 60px 74px black, 0 24px 141px rgb(0, 0, 0);
+  /* box-shadow: 0 3px 90px #929, 0 12px 4px rgb(0, 0, 0); */
+}
+#button-nav {
+  padding: 10px;
+  padding-left: 25px;
 }
