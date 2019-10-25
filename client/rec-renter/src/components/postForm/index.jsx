@@ -1,4 +1,5 @@
 import React from "react";
+import "../postForm/style-post.css";
 // import SignUp from "../../pages/signup";
 // import { PromiseProvider } from "mongoose";
 
@@ -49,6 +50,10 @@ function PostForm(props) {
               <label htmlFor="exampleInputEmail1">Sub-Category</label>
               <select className="form-control">
                 <option>Default select</option>
+                <option>Default select</option>
+                <option>Default select</option>
+                <option>Default select</option>
+                <option>Default select</option>
               </select>
             </div>
             <div className="col-md-4 mb-2">
@@ -71,7 +76,7 @@ function PostForm(props) {
               </label>
               <input
                 type="file"
-                className="form-control-file form-control"
+                // className="form-control-file form-control"
                 id="imagePath"
                 name="imagePath"
                 value={props.imagePath}
@@ -94,7 +99,7 @@ function PostForm(props) {
           </div>
         </form>
         <button
-          className="btn btn-primary submit"
+          className="btn-1 btn-primary submit"
           type="submit"
           onClick={props.handleSubmit}
         >

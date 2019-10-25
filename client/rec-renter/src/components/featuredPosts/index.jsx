@@ -4,6 +4,7 @@ import "../featuredPosts/style-feature.css";
 function Featured(props) {
   return (
     <div className="featuredPosts">
+      <p className="p-feature">Today's Featured Post</p>
       <div className="card-two">
         <div className="card-body-two">
           <h5 className="card-title">Featured Post Card</h5>

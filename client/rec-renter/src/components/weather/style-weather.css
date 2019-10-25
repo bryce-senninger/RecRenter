@@ -49,3 +49,11 @@ a {
 .weatherwidget-io {
   font-size: 0;
 }
+
+.weather-name {
+  font-size: 38px;
+  font-family: fantasy;
+  /* text-decoration: underline; */
+  text-decoration: overline;
+  color: white;
+}

@@ -16,11 +16,14 @@ class Landing extends Component {
       <div className="App">
         <Header />
         <MissionCard />
-        <div className="container-landing">
-          <News />
+
+        <div className="weather container">
           <Weather />
         </div>
-        <Featured />
+        <div className="news container">
+          <News />
+          <Featured />
+        </div>
       </div>
     );
   }
