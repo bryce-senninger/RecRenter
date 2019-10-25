@@ -77,7 +77,7 @@ function PostForm(props) {
               <input
                 type="file"
                 // className="form-control-file form-control"
-                id="imagePath"
+                id="imagePath-2"
                 name="imagePath"
                 value={props.imagePath}
                 onChange={props.handleChange}
@@ -100,6 +100,7 @@ function PostForm(props) {
         </form>
         <button
           className="btn-1 btn-primary submit"
+          id="button-2"
           type="submit"
           onClick={props.handleSubmit}
         >

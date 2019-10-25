@@ -13,7 +13,7 @@ a {
   margin: auto;
   max-width: 1000px;
   /* float: left; */
-  /* grid: none; */
+  grid: none;
 }
 .weatherwidget-io {
   display: inline;
