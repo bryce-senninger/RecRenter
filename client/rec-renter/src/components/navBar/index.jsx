@@ -92,6 +92,7 @@ class NavBar extends React.Component {
               />
               <button
                 className="btn btn-primary pull-right"
+                id="button-nav"
                 onClick={this.handleShowMessageClick}
               >
                 Log In

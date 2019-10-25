@@ -3,7 +3,12 @@ import "../featuredPosts/style-feature.css";
 
 function Featured(props) {
   return (
-    <div className="featuredPosts">
+    <div
+      className="featuredPosts"
+      data-aos="fade-left"
+      // data-aos-easing="linear"
+      data-aos-duration="1500"
+    >
       <p className="p-feature">Today's Featured Post</p>
       <div className="card-two">
         <div className="card-body-two">

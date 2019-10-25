@@ -82,6 +82,7 @@ class Modal extends React.Component {
             justifySelf: "center"
           }}
           className="modal-body"
+          id="id01"
         >
           {this.props.children}
           <hr />
@@ -103,10 +104,19 @@ class Modal extends React.Component {
               onChange={this.handleChange}
             />
             <hr />
-            <button onClick={this.handleSubmit}>Log In</button>
+            <button onClick={this.handleSubmit} id="button-modal">
+              Log In
+            </button>
             <hr />
           </form>
-          <a href="/signup">Not a member? Click here to sign up</a>
+          <a href="/signup" id="member">
+            Not a Member? Click here to Sign Up
+          </a>
+          <br />
+          <br />
+          <a href="/" id="exit">
+            Exit
+          </a>
         </div>
       </div>,
       this.el

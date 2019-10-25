@@ -23,3 +23,34 @@ button:not(:disabled) {
   margin: auto;
   margin-left: 10px;
 }
+.btn-1 {
+  margin: auto;
+  /* margin-bottom: 99px; */
+}
+
+.form-group-one {
+  margin: auto;
+}
+
+#imagePath {
+  margin: auto;
+  width: 20%;
+  /* padding-left: 409px; */
+}
+
+.display-41 {
+  font-size: 3.5rem;
+  font-weight: 200;
+  line-height: 1.2;
+  padding-bottom: 61px;
+  padding-top: 50px;
+  font-family: "Alfa Slab One", cursive;
+  color: white;
+  text-decoration: underline;
+  text-shadow: 0px 0 rgb(0, 0, 0), 0 3px rgb(0, 0, 0), 1px 0 rgb(0, 0, 0),
+    0 -1px rgb(0, 0, 0);
+}
+
+#button-1 {
+  margin-bottom: 80px;
+}
