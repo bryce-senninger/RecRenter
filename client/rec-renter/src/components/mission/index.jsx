@@ -7,7 +7,10 @@ import tree from "./ecology.png";
 import bike from "./bike.png";
 import icon from "./tree4.png";
 import money from "./money.png";
-// import mountain
+import money2 from "./white-money.png";
+import bike2 from "./white-bike.png";
+import tree3 from "./tree-whit.png";
+// import mountain from "./mountain.png";
 
 function MissionCard() {
   return (
@@ -31,7 +34,7 @@ function MissionCard() {
               alt=""
               width={150}
               height={150}
-              src={icon}
+              src={tree3}
               className="img-mission"
             ></img>
             <p className="card-text">
@@ -50,7 +53,7 @@ function MissionCard() {
               alt=""
               width={150}
               height={150}
-              src={bike}
+              src={bike2}
               className="img-mission"
             ></img>
             <p className="card-text">
@@ -69,7 +72,7 @@ function MissionCard() {
               alt=""
               width={150}
               height={150}
-              src={money}
+              src={money2}
               className="img-mission"
             ></img>
             <p className="card-text">

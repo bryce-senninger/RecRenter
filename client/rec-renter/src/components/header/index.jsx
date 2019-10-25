@@ -4,7 +4,12 @@ import "../header/style-header.css";
 
 function Header() {
   return (
-    <div className="jumbotron landingJumbo">
+    <div
+      className="jumbotron landingJumbo"
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+    >
       <h1 className="display-4">Rec Renter</h1>
       <p className="lead">
         A simple way to find and list rentals for recrational gear

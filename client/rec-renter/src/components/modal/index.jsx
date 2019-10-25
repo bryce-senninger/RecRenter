@@ -82,6 +82,7 @@ class Modal extends React.Component {
           <hr />
           <form method="POST" action="http://localhost:3001/api/user/login">
             <input
+              className="input-sign"
               placeholder="Username"
               type="text"
               name="username"
@@ -108,4 +109,12 @@ class Modal extends React.Component {
   }
 }
 
+var modal = document.getElementsByClassName("modal-body");
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
 export default Modal;
