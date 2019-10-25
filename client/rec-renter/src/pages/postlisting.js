@@ -64,7 +64,7 @@ class PostListing extends Component {
 
   handleChange = event => {
     this.setState({
-      [event.target.name]: event.target.value
+      item: event.target.value
     });
   };
   handleSubmit = event => {
@@ -107,12 +107,13 @@ class PostListing extends Component {
         </CardWrap>
         <PostForm
           handleChange={this.handleChange}
-          postTitle={this.state.title}
-          location={this.state.location}
-          subcategory={this.state.subcategoryId}
-          price={this.state.price}
-          imagePath={this.state.imagePath}
-          description={this.state.description}
+          // postTitle={this.state.title}
+          // location={this.state.location}
+          // subcategory={this.state.subcategoryId}
+          // price={this.state.price}
+          // imagePath={this.state.imagePath}
+          // description={this.state.description}
+          item={this.state.item}
           handleSubmit={this.handleSubmit}
         />
       </div>
