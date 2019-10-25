@@ -7,41 +7,53 @@ import "./style.css";
 import PostForm from "../components/postForm";
 
 class PostListing extends Component {
-  state = { options: null, query: null };
-  // state = { options: null };
+  state = {
+    options: null,
+    category: null,
+    item: {
+      title: "",
+      description: "",
+      location: "",
+      imagePath: "",
+      price: "",
+      subcategoryId: ""
+    }
+  };
 
   //lifecycle methods
   componentDidMount() {
+    this.getCategories();
+  }
+  getCategories = () => {
     fetch("http://localhost:3001/api/category", {
       method: "GET",
       headers: {
         "Content-type": "application/json"
       }
-      // body: JSON.stringify(this.state)
     })
       .then(function(result) {
         return result.json();
       })
 
       .then(info => {
-        // console.log(info);
         this.setState({ options: info });
-        // console.log(this.state.options);
-      });
-  }
-  // componentDidUpdate() {
-  handleClick = function(id, event) {
-    // console.log(this.state.query);
+      })
+      .catch(err => console.log(err));
+  };
+
+  handleClick = id => {
     fetch("http://localhost:3001/api/category/" + id)
       .then(function(result) {
         return result.json();
         // console.log(result);
       })
       .then(category => {
-        console.log(category);
-        // this.setState({
-        // query: ""
-        // });
+        // console.log(category);
+        this.setState({
+          category: category,
+          options: null
+        });
+        console.log(this.state.category);
       })
       .catch(err => {
         if (err) {
@@ -49,12 +61,29 @@ class PostListing extends Component {
         }
       });
   };
-  // }
-  //functional methods
-  // setCategory = event => {
-  //   this.setState({ category: "hello" });
-  //   console.log(this.state.category);
-  // };
+
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+  handleSubmit = event => {
+    event.preventDefault();
+    console.log(this.state);
+
+    fetch("http://localhost:3001/api/item", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(this.state.item)
+    })
+      .then(function(result) {
+        return result.json();
+      })
+
+      .then(item => console.log(item));
+  };
 
   render() {
     return (
@@ -64,12 +93,11 @@ class PostListing extends Component {
           {this.state.options
             ? this.state.options.map(option => (
                 <CategoryCard
-                  // setCategory={this.setCategory}
                   handleClick={this.handleClick}
                   key={option._id}
                   id={option._id}
                   name={option.name}
-                  subCategories={option.subcategories}
+                  // subCategories={option.subcategories}
                   image={option.image}
                   category={option.name}
                   value={option.category}
@@ -77,7 +105,16 @@ class PostListing extends Component {
               ))
             : ""}
         </CardWrap>
-        <PostForm />
+        <PostForm
+          handleChange={this.handleChange}
+          postTitle={this.state.title}
+          location={this.state.location}
+          subcategory={this.state.subcategoryId}
+          price={this.state.price}
+          imagePath={this.state.imagePath}
+          description={this.state.description}
+          handleSubmit={this.handleSubmit}
+        />
       </div>
     );
   }

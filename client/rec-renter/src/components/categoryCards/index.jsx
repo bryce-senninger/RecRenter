@@ -15,6 +15,7 @@ function CategoryCard(props) {
         src={props.image}
         category={props.name}
         value={props.value}
+        subcategory={props.subCategory}
       />
       <div>
         <h2 className="categoryNames">{props.name}</h2>
