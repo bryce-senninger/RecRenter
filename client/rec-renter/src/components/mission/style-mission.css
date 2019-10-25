@@ -6,7 +6,8 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  margin-bottom: 150px;
+  /* margin-bottom: 150px; */
+  margin-bottom: 129px;
   padding-bottom: 0;
   /* grid-template-columns: 1fr 1fr 1fr; */
 }
@@ -40,7 +41,7 @@
 .img-mission {
   margin: auto;
   width: 150px;
-  height: 150px;
+  height: 160px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -54,16 +55,16 @@
 .mission-header {
   text-align: center;
   font-family: "Libre Barcode 128 Text", cursive;
-  font-size: 63px;
+  font-size: 73px;
   margin-bottom: 50px;
   /* background-image: linear-gradient(to bottom, white); */
-  background-color: black;
+  /* background-color: black; */
   color: white;
-  width: 40%;
+  width: 60%;
   margin: 0 auto;
   margin-bottom: 40px;
   margin-top: 200px;
-  border: 3px solid white;
+  /* border: 3px solid white; */
   border-radius: 10px;
   transition: all 0.25s ease-in-out;
   padding: 15px;
@@ -79,11 +80,22 @@
 
 .card-text {
   padding: 5px;
+  font-family: "Gidugu", sans-serif;
+  font-family: 15px;
 }
 
 .card-text:last-child {
   margin-bottom: 0;
-  padding: 3px;
+  padding: 2px;
   padding-top: 1px;
   padding-bottom: 0px;
+  font-size: 20px;
+  color: white;
+}
+
+html:not(.no-js) [data-aos^="fade"][data-aos^="fade"].aos-animate {
+  opacity: 1;
+  transform: none;
+  margin-top: 0px;
+  margin-bottom: -82px;
 }

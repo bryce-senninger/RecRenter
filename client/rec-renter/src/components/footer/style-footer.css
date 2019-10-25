@@ -6,3 +6,21 @@
   background-color: black;
   color: white;
 }
+.footer-steeze {
+  background-color: black;
+  /* position: fixed; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+.pb-3,
+.py-3 {
+  padding-bottom: 1rem !important;
+  background-color: black;
+  color: white;
+  border-top: ivory;
+  border-top: 2px solid white;
+  margin-top: 30px;
+}

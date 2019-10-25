@@ -9,7 +9,8 @@
   margin: 1.5rem;
   position: relative;
   width: 314px;
-  box-shadow: 0 6px 9px #999, 0 6px 9px rgb(0, 0, 0);
+  /* box-shadow: 0 6px 9px #999, 0 6px 9px rgb(0, 0, 0); */
+  box-shadow: 0 6px 175px #929, 0 24px 9px rgb(0, 0, 0);
   text-align: left;
   border: solid 4px rgb(0, 0, 0);
   padding: 2px;
@@ -23,9 +24,10 @@
   cursor: pointer;
   background-image: linear-gradient(
     to bottom,
-    white,
-    rgba(105, 105, 105, 0.85),
-    rgba(20, 238, 205, 0.85)
+    #12c2e9,
+    #c471ed,
+    #f64f59 /* rgba(105, 105, 105, 0.85),
+    rgba(20, 238, 205, 0.85) */
   );
 }
 
@@ -60,4 +62,15 @@
   margin-left: -66px;
   top: 50%;
   margin-top: -20px;
+}
+
+.cardWrapper {
+  padding-top: 50px;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 20px;
+  justify-content: space-around;
+  align-content: flex-start;
+  margin-bottom: 20px;
 }

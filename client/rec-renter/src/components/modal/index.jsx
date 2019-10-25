@@ -82,6 +82,7 @@ class Modal extends React.Component {
           <hr />
           <form method="POST" action="http://localhost:3001/api/user/login">
             <input
+              className="input-sign"
               placeholder="Username"
               type="text"
               name="username"
