@@ -17,7 +17,8 @@ class PostListing extends Component {
       imagePath: "",
       price: "",
       subcategoryId: ""
-    }
+    },
+    currentCategory: null
   };
 
   //lifecycle methods
@@ -48,18 +49,22 @@ class PostListing extends Component {
         // console.log(result);
       })
       .then(category => {
-        // console.log(category);
+        console.log(category, "api resposnse");
         this.setState({
-          category: category,
-          options: null
+          currentCategory: category
         });
-        console.log(this.state.category);
       })
       .catch(err => {
         if (err) {
           console.log(err);
         }
       });
+  };
+
+  selectCategory = category => {
+    this.setState({
+      currentCategory: category
+    });
   };
 
   handleChange = event => {
@@ -88,33 +93,40 @@ class PostListing extends Component {
   render() {
     return (
       <div className="App">
-        <PostHeader />
-        <CardWrap>
-          {this.state.options
-            ? this.state.options.map(option => (
-                <CategoryCard
-                  handleClick={this.handleClick}
-                  key={option._id}
-                  id={option._id}
-                  name={option.name}
-                  // subCategories={option.subcategories}
-                  image={option.image}
-                  category={option.name}
-                  value={option.category}
-                />
-              ))
-            : ""}
-        </CardWrap>
-        <PostForm
-          handleChange={this.handleChange}
-          postTitle={this.state.title}
-          location={this.state.location}
-          subcategory={this.state.subcategoryId}
-          price={this.state.price}
-          imagePath={this.state.imagePath}
-          description={this.state.description}
-          handleSubmit={this.handleSubmit}
-        />
+        {this.state.currentCategory ? (
+          <PostForm
+            handleChange={this.handleChange}
+            category={this.state.currentCategory}
+            // postTitle={this.state.title}
+            // location={this.state.location}
+            // subcategory={this.state.subcategories}
+            // price={this.state.price}
+            // imagePath={this.state.imagePath}
+            item={this.state.item}
+            handleSubmit={this.handleSubmit}
+          />
+        ) : (
+          <>
+            <PostHeader />
+            <CardWrap>
+              {this.state.options
+                ? this.state.options.map(option => (
+                    <CategoryCard
+                      handleClick={this.handleClick}
+                      key={option._id}
+                      id={option._id}
+                      name={option.name}
+                      subCategories={option.subcategories}
+                      image={option.image}
+                      category={option.name}
+                      value={option.category}
+                      setCategory={this.selectCategory}
+                    />
+                  ))
+                : ""}
+            </CardWrap>
+          </>
+        )}
       </div>
     );
   }
