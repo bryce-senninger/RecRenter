@@ -1,20 +1,28 @@
 const path = require("path");
 const express = require("express");
-const cors = require("cors");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const session = require("express-session");
 const app = express();
+const cors = require("cors");
+const cloudinary = require("cloudinary");
 const PORT = process.env.PORT || 3001;
 
 require("./passport")(passport);
 const routes = require("./routes/index", passport);
+
+cloudinary.config({
+  cloud_name: "dqpccnwco",
+  api_key: "442876256574885",
+  api_secret: "9yurGnuwemrGwR90gIdL7d3_wdQ"
+});
 
 app.use(express.static("public"));
 app.use(express.static(__dirname + "/itemImages"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
+app.options("*", cors());
 app.use(
   session({
     secret: "thesecret",
@@ -42,7 +50,7 @@ mongoose
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-app.get("*", (req, res) => {
+app.get("*", cors(), (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 

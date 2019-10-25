@@ -7,6 +7,7 @@ const modalRoot = document.getElementById("modal-root");
 
 class Modal extends React.Component {
   constructor(props) {
+    console.log(props);
     super(props);
     this.state = {
       username: "",
@@ -34,13 +35,17 @@ class Modal extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log(this.state);
+    let user = {
+      username: this.state.username,
+      password: this.state.password
+    };
 
     fetch("http://localhost:3001/api/user/login", {
       method: "POST",
       headers: {
         "Content-type": "application/json"
       },
-      body: JSON.stringify(this.state)
+      body: JSON.stringify(user)
     })
       .then(function(result) {
         return result.json();
@@ -81,7 +86,7 @@ class Modal extends React.Component {
         >
           {this.props.children}
           <hr />
-          <form method="POST" action="http://localhost:3001/api/user/login">
+          <form method="POST" action="/">
             <input
               className="input-sign"
               placeholder="Username"

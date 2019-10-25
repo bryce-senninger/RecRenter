@@ -31,7 +31,7 @@ class SignUp extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
+    console.log(this.state.item);
 
     fetch("http://localhost:3001/api/user/signup", {
       method: "POST",

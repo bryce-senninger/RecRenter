@@ -3,7 +3,7 @@ const { Category } = require("../models/category");
 module.exports = {
   findAll: function(req, res) {
     Category.find({})
-      .populate({ path: "subcategories", select: "name" })
+      .populate({ path: "subcategories", select: "name image" })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
   },

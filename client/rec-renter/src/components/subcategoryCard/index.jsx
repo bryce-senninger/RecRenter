@@ -5,7 +5,7 @@ function SubcategoryCard(props) {
   return (
     <div
       className="card categoryCard"
-      onClick={e => props.handleClick(props.id, e)}
+      onClick={e => props.subcategoryHandleClick(props.id, e)}
       key={props.id}
       id={props.id}
     >

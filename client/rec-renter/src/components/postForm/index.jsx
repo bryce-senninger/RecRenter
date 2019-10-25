@@ -15,8 +15,8 @@ function PostForm(props) {
         <hr />
         <form
           method="POST"
-          //   action="http://localhost:3001/api/user/signup"
-          // encType="multipart/form-data"
+          action="http://localhost:3001/api/item"
+          encType="multipart/form-data"
         >
           <div className="form-row">
             <div className="col-md-6 mb-3">
@@ -24,10 +24,9 @@ function PostForm(props) {
               <input
                 type="text"
                 className="form-control"
-                id="name"
+                name="title"
                 placeholder="e.g. 'Mountain Bike'"
-                name="posttitle"
-                value={props.postTitle}
+                value={props.title}
                 onChange={props.handleChange}
                 required
               />
@@ -37,9 +36,8 @@ function PostForm(props) {
               <input
                 type="text"
                 className="form-control"
-                id="location"
-                placeholder="e.g. 'Salt Lake City'"
                 name="location"
+                placeholder="e.g. 'Salt Lake City'"
                 value={props.location}
                 onChange={props.handleChange}
                 required
@@ -49,9 +47,19 @@ function PostForm(props) {
           <div className="form-row">
             <div className="col-md-4 mb-2">
               <label htmlFor="exampleInputEmail1">Sub-Category</label>
-              <select className="form-control">
+
+              <select className="form-control" onChange={props.handleChange}>
                 {props.category.subcategories.map(index => {
-                  return <option data-id={index._id}>{index.name}</option>;
+                  return (
+                    <option
+                      data-id={index._id}
+                      value={index._id}
+                      name={props.value}
+                      key={index._id}
+                    >
+                      {index.name}
+                    </option>
+                  );
                 })}
               </select>
             </div>
@@ -60,11 +68,10 @@ function PostForm(props) {
                 Asking Rental Price Per Day
               </label>
               <input
-                type="price"
+                type="text"
                 className="form-control"
-                id="price"
+                name="price"
                 placeholder="e.g. 25.00"
-                name="email"
                 value={props.price}
                 onChange={props.handleChange}
               />
@@ -78,6 +85,7 @@ function PostForm(props) {
                 // className="form-control-file form-control"
                 id="imagePath-2"
                 name="imagePath"
+                // className="form-control-file form-control"
                 value={props.imagePath}
                 onChange={props.handleChange}
               />

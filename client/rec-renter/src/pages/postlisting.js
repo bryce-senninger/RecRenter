@@ -10,14 +10,12 @@ class PostListing extends Component {
   state = {
     options: null,
     category: null,
-    item: {
-      title: "",
-      description: "",
-      location: "",
-      imagePath: "",
-      price: "",
-      subcategoryId: ""
-    },
+    title: "",
+    description: "",
+    location: "",
+    imagePath: "",
+    price: "",
+    subcategoryId: "",
     currentCategory: null
   };
 
@@ -71,23 +69,31 @@ class PostListing extends Component {
     this.setState({
       [event.target.name]: event.target.value
     });
+    console.log(this.state);
   };
   handleSubmit = event => {
     event.preventDefault();
     console.log(this.state);
+    let data = {
+      title: this.state.title,
+      description: this.state.description,
+      location: this.state.location,
+      imagePath: this.state.imagePath,
+      price: this.state.price,
+      subcategoryId: this.state.subcategoryId
+    };
 
     fetch("http://localhost:3001/api/item", {
       method: "POST",
       headers: {
         "Content-type": "application/json"
       },
-      body: JSON.stringify(this.state.item)
+      body: JSON.stringify(data)
     })
-      .then(function(result) {
-        return result.json();
-      })
+      .then(result => result.json(result))
 
-      .then(item => console.log(item));
+      .then(item => console.log(item))
+      .catch(err => console.log(err));
   };
 
   render() {
@@ -97,12 +103,13 @@ class PostListing extends Component {
           <PostForm
             handleChange={this.handleChange}
             category={this.state.currentCategory}
-            // postTitle={this.state.title}
-            // location={this.state.location}
-            // subcategory={this.state.subcategories}
-            // price={this.state.price}
-            // imagePath={this.state.imagePath}
-            item={this.state.item}
+            title={this.state.title}
+            location={this.state.location}
+            value={this.state.subcategoryId}
+            price={this.state.price}
+            imagePath={this.state.imagePath}
+            // value={this.state.value}
+            // item={this.state.item}
             handleSubmit={this.handleSubmit}
           />
         ) : (

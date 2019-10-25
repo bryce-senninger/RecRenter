@@ -6,7 +6,7 @@ const itemSchema = new Schema({
   keyword: Array,
   description: String,
   location: { type: String },
-  imagePath: { data: Buffer, contentType: String },
+  imagePath: { data: Buffer },
   price: { type: Number },
   isRented: { type: Boolean, default: false },
   created_at: { type: Date, default: null },

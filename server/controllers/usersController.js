@@ -50,12 +50,12 @@ module.exports = {
     });
   },
   login: function(err, res) {
-    authenticate("local", {
+    passport.authenticate("local", {
       successRedirect: "/",
       failureRedirect: "/login",
       failureFlash: true
     }),
-      (err, res) => {
+      function(err, res) {
         if (err) {
           res.send(err);
         }
