@@ -61,6 +61,24 @@ class SearchListings extends Component {
         }
       });
   };
+  subcategoryHandleClick = id => {
+    fetch("http://localhost:3001/api/category/" + id)
+      .then(function(result) {
+        return result.json();
+        // console.log(result);
+      })
+      .then(category => {
+        console.log(category, "api resposnse");
+        this.setState({
+          currentCategory: category
+        });
+      })
+      .catch(err => {
+        if (err) {
+          console.log(err);
+        }
+      });
+  };
 
   selectCategory = category => {
     this.setState({
@@ -98,11 +116,11 @@ class SearchListings extends Component {
           // <PostForm
           //   handleChange={this.handleChange}
           //   category={this.state.currentCategory}
-          //   // postTitle={this.state.title}
-          //   // location={this.state.location}
-          //   // subcategory={this.state.subcategories}
-          //   // price={this.state.price}
-          //   // imagePath={this.state.imagePath}
+          //   postTitle={this.state.title}
+          //   location={this.state.location}
+          //   subcategory={this.state.subcategories}
+          //   price={this.state.price}
+          //   imagePath={this.state.imagePath}
           //   item={this.state.item}
           //   handleSubmit={this.handleSubmit}
           // />

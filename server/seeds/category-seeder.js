@@ -15,11 +15,7 @@ const aCategory = new Category({
 
 const ski = new Subcategory({
   name: "Skiing",
-<<<<<<< HEAD
-  image: "../../../assets/snowflake.png"
-=======
   image: "../../../assets/subImages/snow/ski.png"
->>>>>>> 35a2bf1cf4b9ee093e1dbdcbc22dc2a1a8c15181
 });
 ski.save();
 aCategory.subcategories.push(ski);

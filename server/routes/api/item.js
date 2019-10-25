@@ -15,8 +15,8 @@ router
 
 router
   // lines up with /item/:id
-  .route("/:id")
-  .get(itemsController.findById)
+  .route("/:subcategoryId")
+  .get(itemsController.findOne)
   .put(itemsController.update)
   .delete(itemsController.remove);
 

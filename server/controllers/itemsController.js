@@ -42,10 +42,16 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.json(err));
   },
-  findById: function(req, res) {
-    Item.findById({ _id: req.params.id })
-      .populate("subcategoryId")
-      .then(dbModel => res.json(dbModel))
+  findOne: function(req, res) {
+    let id = req.params.id;
+    Item.findOne({ _id: id })
+      .populate({
+        path: "subcategories",
+        select: "name image"
+      })
+      .then(function(result) {
+        res.send(result);
+      })
       .catch(err => res.json(err));
   },
 
