@@ -12,7 +12,7 @@ module.exports = {
     Category.findOne({ _id: id })
       .populate({
         path: "subcategories",
-        select: "name"
+        select: "name image"
       })
       .then(function(result) {
         res.send(result);

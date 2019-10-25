@@ -93,7 +93,6 @@ class PostListing extends Component {
   render() {
     return (
       <div className="App">
-        <PostHeader />
         {this.state.currentCategory ? (
           <PostForm
             handleChange={this.handleChange}
@@ -107,23 +106,26 @@ class PostListing extends Component {
             handleSubmit={this.handleSubmit}
           />
         ) : (
-          <CardWrap>
-            {this.state.options
-              ? this.state.options.map(option => (
-                  <CategoryCard
-                    handleClick={this.handleClick}
-                    key={option._id}
-                    id={option._id}
-                    name={option.name}
-                    subCategories={option.subcategories}
-                    image={option.image}
-                    category={option.name}
-                    value={option.category}
-                    setCategory={this.selectCategory}
-                  />
-                ))
-              : ""}
-          </CardWrap>
+          <>
+            <PostHeader />
+            <CardWrap>
+              {this.state.options
+                ? this.state.options.map(option => (
+                    <CategoryCard
+                      handleClick={this.handleClick}
+                      key={option._id}
+                      id={option._id}
+                      name={option.name}
+                      subCategories={option.subcategories}
+                      image={option.image}
+                      category={option.name}
+                      value={option.category}
+                      setCategory={this.selectCategory}
+                    />
+                  ))
+                : ""}
+            </CardWrap>
+          </>
         )}
       </div>
     );
