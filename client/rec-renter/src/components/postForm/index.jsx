@@ -4,6 +4,7 @@ import "../postForm/style-post.css";
 // import { PromiseProvider } from "mongoose";
 
 function PostForm(props) {
+  console.log(props);
   return (
     <div id="wrapper">
       <div className="">
@@ -49,11 +50,9 @@ function PostForm(props) {
             <div className="col-md-4 mb-2">
               <label htmlFor="exampleInputEmail1">Sub-Category</label>
               <select className="form-control">
-                <option>Default select</option>
-                <option>Default select</option>
-                <option>Default select</option>
-                <option>Default select</option>
-                <option>Default select</option>
+                {props.category.subcategories.map(index => {
+                  return <option data-id={index._id}>{index.name}</option>;
+                })}
               </select>
             </div>
             <div className="col-md-4 mb-2">
