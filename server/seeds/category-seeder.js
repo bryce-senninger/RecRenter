@@ -210,7 +210,10 @@ const fCategory = new Category({
   image: "../../../assets/help.png"
 });
 
-const Miscmisc = new Subcategory({ name: "Misc" });
+const Miscmisc = new Subcategory({
+  name: "Misc",
+  image: "../../../assets/help.png"
+});
 Miscmisc.save();
 fCategory.subcategories.push(Miscmisc);
 
