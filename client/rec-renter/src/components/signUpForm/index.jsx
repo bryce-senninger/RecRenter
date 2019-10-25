@@ -7,7 +7,7 @@ function SignUpForm(props) {
   return (
     <div id="wrapper">
       <div className="">
-        <h1 className="display-4">Rec Renter Sign Up</h1>
+        <h1 className="display-41">Rec Renter Sign Up</h1>
         <div id="headText">
           <p>Tell us a bit about your rad self</p>
         </div>
@@ -187,10 +187,12 @@ function SignUpForm(props) {
           // action="http://localhost:3001/api/user/signup"
           // enctype="multipart/form-data"
           >
-            <div class="form-group">
+            <div class="form-group-one">
               <label for="exampleFormControlFile1">
                 Upload a Photo to Your Profile
               </label>
+              <br />
+              <br />
               <input
                 type="file"
                 class="form-control-file"
@@ -202,8 +204,11 @@ function SignUpForm(props) {
             </div>
           </form>
         </form>
+        <br />
+
         <button
-          class="btn btn-primary submit"
+          class="btn-1 btn-primary submit"
+          id="button-1"
           type="submit"
           onClick={props.handleSubmit}
         >

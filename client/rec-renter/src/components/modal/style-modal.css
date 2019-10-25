@@ -9,16 +9,13 @@
   min-width: 300px;
   justify-self: center;
   text-align: center;
-}
-
-body.modal-body {
-  overflow: hidden;
-  position: fixed;
+  /* overflow: hidden; */
 }
 
 .input-sign {
   margin: auto;
   padding-right: 0px;
+  overflow: hidden;
 }
 
 button,
@@ -26,4 +23,22 @@ input {
   overflow: visible;
   padding-right: -54px;
   padding-left: 2px;
+}
+/* #id01 {
+  position: fixed;
+} */
+
+body.modal-body {
+  overflow: hidden;
+}
+
+#button-modal {
+  background-color: black;
+  color: white;
+}
+#exit {
+  color: black;
+}
+#member {
+  text-decoration: underline;
 }
