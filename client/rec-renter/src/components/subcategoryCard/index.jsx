@@ -5,7 +5,7 @@ function SubcategoryCard(props) {
   return (
     <div
       className="card categoryCard"
-      onClick={e => props.subcategoryHandleClick(props.id, e)}
+      onClick={e => props.subCategoryHandleClick(props.id, e)}
       key={props.id}
       id={props.id}
     >
@@ -15,7 +15,7 @@ function SubcategoryCard(props) {
         src={props.image}
         category={props.name}
         value={props.value}
-        subcategory={props.subCategory}
+        // subcategory={props.subCategory}
       />
       <div>
         <h2 className="categoryNames">{props.name}</h2>
