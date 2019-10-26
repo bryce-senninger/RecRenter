@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import SearchHeader from "../components/searchHeader";
 import CategoryCard from "../components/categoryCards";
 import SubcategoryCard from "../components/subcategoryCard";
-import options from "../options.json";
 import CardWrap from "../components/cardWrap";
 import SearchCard from "../components/searchCards";
 import SearchCardWrap from "../components/searchCardWrap";
 import "./style.css";
-// import PostForm from "../components/postForm";
 
 class SearchListings extends Component {
   state = {
@@ -53,7 +51,6 @@ class SearchListings extends Component {
     fetch("http://localhost:3001/api/category/" + id)
       .then(function(result) {
         return result.json();
-        // console.log(result);
       })
       .then(category => {
         console.log(category, "api resposnse");
@@ -74,7 +71,6 @@ class SearchListings extends Component {
     fetch("http://localhost:3001/api/item/" + subcategoryId)
       .then(function(result) {
         return result.json();
-        // console.log(result);
       })
       .then(response => {
         console.log(response, "--Item search--");
@@ -94,12 +90,6 @@ class SearchListings extends Component {
         }
       });
   };
-
-  // selectCategory = category => {
-  //   this.setState({
-  //     currentCategory: category
-  //   });
-  // };
 
   handleChange = event => {
     this.setState({

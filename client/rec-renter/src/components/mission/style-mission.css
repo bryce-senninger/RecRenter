@@ -6,10 +6,8 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  /* margin-bottom: 150px; */
   margin-bottom: 129px;
   padding-bottom: 0;
-  /* grid-template-columns: 1fr 1fr 1fr; */
 }
 .card-one {
   display: flex;
@@ -19,19 +17,10 @@
   padding: 2rem;
   border-style: none;
   padding-top: 2px;
-  /* background-image: linear-gradient(
-    to bottom,
-    rgb(207, 209, 203),
-    white,
-    white
-  ); */
-  /* background-image: linear-gradient(to bottom, #7996e6, #d7dde8, white); */
   margin: 25px;
-  /* border: 3px solid black; */
   border-radius: 10px;
   height: 92%;
   transition: all 0.25s ease-in-out;
-  /* grid-template-columns: 1fr 1fr 1fr; */
 }
 
 .card-one:hover {
@@ -57,14 +46,11 @@
   font-family: "Libre Barcode 128 Text", cursive;
   font-size: 73px;
   margin-bottom: 50px;
-  /* background-image: linear-gradient(to bottom, white); */
-  /* background-color: black; */
   color: white;
   width: 60%;
   margin: 0 auto;
   margin-bottom: 40px;
   margin-top: 200px;
-  /* border: 3px solid white; */
   border-radius: 10px;
   transition: all 0.25s ease-in-out;
   padding: 15px;

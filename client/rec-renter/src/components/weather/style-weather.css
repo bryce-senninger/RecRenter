@@ -1,7 +1,6 @@
 #weatherWidget {
   font-family: Tahoma, Arial, Verdana, Segoe, sans-serif;
   font-size: 1rem;
-  /* width: 895px; */
   margin: auto;
   background-color: black !important;
 }
@@ -12,11 +11,10 @@ a {
 .container-weather {
   margin: auto;
   max-width: 1000px;
-  /* box-shadow: 0 3px 70px #929, 0 12px 4px rgb(0, 0, 0); */
   border: solid 3px rgb(255, 255, 255);
   border-radius: 15px;
   box-shadow: 0 20px 74px black, 0 24px 141px rgb(0, 0, 0);
-  /* float: left; */
+
   grid: none;
 }
 .weatherwidget-io {
@@ -29,7 +27,6 @@ a {
   text-align: left;
   text-indent: 0px !important;
   flex: 1;
-  /* display: inline !important; */
 }
 .currentWeather {
   display: -webkit-box;
@@ -39,7 +36,6 @@ a {
   -ms-flex-positive: 10;
   flex-grow: 10;
   background-color: black;
-  /* color: black; */
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -58,7 +54,5 @@ a {
   font-size: 38px;
   font-family: fantasy;
   text-decoration: underline;
-
-  /* text-decoration: overline; */
   color: white;
 }

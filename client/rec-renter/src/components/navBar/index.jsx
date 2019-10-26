@@ -1,8 +1,5 @@
 import React from "react";
-// import icon from "./mountain.png";
-// import logo from "./logo-3.png";
 import { Link } from "react-router-dom";
-// import lock from "./lock.png";
 import "../navBar/style-nav.css";
 import Modal from "../modal";
 import newlogo from "./new-logo-white.png";
@@ -13,19 +10,16 @@ class NavBar extends React.Component {
   handleCloseModal = () => this.setState({ showModal: false });
   render() {
     return (
-      // <div>
       <div className="navbar-expand-lg ">
         <button
           className="navbar-toggler ml-auto"
           type="button"
           data-toggle="collapse"
           data-target="#navCollapse"
-          // data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          {/* &#9776; */}
           <span className="navbar-toggler-icon">&#9776;</span>
         </button>
         <ul className="nav">
@@ -91,7 +85,6 @@ class NavBar extends React.Component {
                 onClick={this.handleShowMessageClick}
               >
                 Log In
-                {/* <img src={lock} alt="" /> */}
               </button>
 
               {this.state.showModal ? (
@@ -103,11 +96,8 @@ class NavBar extends React.Component {
           </div>
         </ul>
       </div>
-      // </div>
     );
   }
 }
-
-// {document.onauxclick}
 
 export default NavBar;

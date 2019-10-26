@@ -1,7 +1,5 @@
 import React from "react";
 import "../postForm/style-post.css";
-// import SignUp from "../../pages/signup";
-// import { PromiseProvider } from "mongoose";
 
 function PostForm(props) {
   console.log(props);
@@ -75,7 +73,6 @@ function PostForm(props) {
                       data-id={index._id}
                       value={index._id}
                       name={props.value}
-                      // key={index._id}
                     >
                       {index.name}
                     </option>
@@ -102,10 +99,8 @@ function PostForm(props) {
               </label>
               <input
                 type="file"
-                // className="form-control-file form-control"
                 id="imagePath-2"
                 name="imagePath"
-                // className="form-control-file form-control"
                 value={props.imagePath}
                 onChange={props.handleChange}
               />

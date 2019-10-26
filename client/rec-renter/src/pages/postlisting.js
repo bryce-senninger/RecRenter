@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PostHeader from "../components/postHeader";
 import CategoryCard from "../components/categoryCards";
-// import options from "../options.json";
 import CardWrap from "../components/cardWrap";
 import "./style.css";
 import PostForm from "../components/postForm";
@@ -48,7 +47,6 @@ class PostListing extends Component {
     fetch("http://localhost:3001/api/category/" + id)
       .then(function(result) {
         return result.json();
-        // console.log(result);
       })
       .then(category => {
         console.log(category, "api resposnse");
@@ -158,46 +156,7 @@ class PostListing extends Component {
   }
 
   render() {
-    return (
-      <div className="App">
-        {this.postStage(this.state.currentStage)}
-        {/* {this.state.currentCategory ? (
-          <PostForm
-            handleChange={this.handleChange}
-            category={this.state.currentCategory}
-            title={this.state.title}
-            description={this.state.description}
-            location={this.state.location}
-            name={this.state.subcategoryId}
-            price={this.state.price}
-            imagePath={this.state.imagePath}
-            handleSubmit={this.handleSubmit}
-            email={this.state.email}
-          />
-        ) : (
-          <>
-            <PostHeader />
-            <CardWrap>
-              {this.state.options
-                ? this.state.options.map(option => (
-                    <CategoryCard
-                      handleClick={this.handleClick}
-                      key={option._id}
-                      id={option._id}
-                      name={option.name}
-                      subCategories={option.subcategories}
-                      image={option.image}
-                      category={option.name}
-                      value={option.category}
-                      setCategory={this.selectCategory}
-                    />
-                  ))
-                : ""}
-            </CardWrap>
-          </>
-        )} */}
-      </div>
-    );
+    return <div className="App">{this.postStage(this.state.currentStage)}</div>;
   }
 }
 

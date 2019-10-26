@@ -6,7 +6,6 @@ form {
 
 p {
   color: white;
-  /* text-decoration: underline; */
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -21,19 +20,12 @@ p {
   text-align: center;
   background-color: white;
   color: black;
-  /* margin-bottom: 50px; */
 }
-
-/* button,
-input {
-  overflow: visible;
-  padding-right: -54px;
-  padding-left: 93px;
-} */
 
 #imagePath-2 {
   padding-left: 89px;
 }
+
 #button-2 {
   margin-bottom: 100px;
 }

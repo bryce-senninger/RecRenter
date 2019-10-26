@@ -6,7 +6,6 @@ function Featured(props) {
     <div
       className="featuredPosts"
       data-aos="fade-left"
-      // data-aos-easing="linear"
       data-aos-duration="1500"
     >
       <p className="p-feature">Today's Featured Post</p>
