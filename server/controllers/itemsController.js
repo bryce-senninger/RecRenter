@@ -49,7 +49,7 @@ module.exports = {
     let _id = req.params.subcategoryId;
     Item.find({ subcategoryId: _id })
       .populate({
-        path: "subcategories",
+        path: "subcategoryId",
         select: "name image"
       })
       .then(function(result) {
