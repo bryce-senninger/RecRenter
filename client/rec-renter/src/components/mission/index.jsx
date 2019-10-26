@@ -1,16 +1,8 @@
 import React from "react";
 import "../mission/style-mission.css";
-// import logo from "./mission-one-2.png";
-// import logo2 from "./mission-one.png";
-// import tree from "./ecology.png";
-// import money from "./save-money.png";
-import bike from "./bike.png";
-import icon from "./tree4.png";
-import money from "./money.png";
 import money2 from "./white-money.png";
 import bike2 from "./white-bike.png";
 import tree3 from "./tree-whit.png";
-// import mountain from "./mountain.png";
 
 function MissionCard() {
   return (
@@ -23,7 +15,6 @@ function MissionCard() {
         What is Rec Renter?
       </h2>
       <div className="container">
-        {/* <h2 className="mission-header">What is Rec Renter?</h2> */}
         <div
           className="card-one"
           data-aos="fade-right"

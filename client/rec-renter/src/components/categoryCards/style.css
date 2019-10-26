@@ -1,19 +1,10 @@
 .categoryCard {
-  /* background-image: linear-gradient(
-    to bottom,
-    rgba(207, 209, 203, 0.85),
-    rgba(91, 109, 99, 0.85)
-  ); */
   border-radius: 2px;
   height: 250px;
   margin: 1.5rem;
   position: relative;
   width: 314px;
-
   background-image: linear-gradient(to bottom, #2980b9, #6dd5fa, #ffffff);
-  /* box-shadow: 0 6px 9px #999, 0 6px 9px rgb(0, 0, 0); */
-  /* box-shadow: 0 6px 175px #929, 0 24px 9px rgb(0, 0, 0); */
-  /* box-shadow: 0 6px 74px black, 0 24px 9px rgb(0, 0, 0); */
   box-shadow: 0 160px 74px black, 0 24px 141px rgb(0, 0, 0);
   text-align: left;
   border: solid 4px rgb(0, 0, 0);
@@ -26,15 +17,7 @@
 .categoryCard:hover {
   transform: scale(1.1);
   cursor: pointer;
-  /* background-image: linear-gradient(
-    to bottom,
-    #12c2e9,
-    #c471ed,
-    #f64f59
-  ); */
   background-image: linear-gradient(to bottom, #5433ff, #20bdff, #a5fecb);
-  /* background-image: linear-gradient(to bottom, #2980b9, #6dd5fa, #ffffff); */
-  /* background-image: linear-gradient(to bottom, #5433ff, #20bdff, #a5fecb); */
 }
 
 .categoryImg {

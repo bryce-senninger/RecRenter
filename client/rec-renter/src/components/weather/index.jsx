@@ -9,9 +9,8 @@ function Weather() {
       data-aos-duration="2000"
     >
       <p className="weather-name">Local Weather</p>
-      {/* <p>Local Weather</p> */}
       <a
-        class="weatherwidget-io"
+        className="weatherwidget-io"
         href="https://forecast7.com/en/40d76n111d89/salt-lake-city/?unit=us"
         data-label_1="SALT LAKE CITY"
         data-label_2="WEATHER"
@@ -29,26 +28,6 @@ function Weather() {
       >
         SALT LAKE CITY WEATHER
       </a>
-      {/* <a
-        class="weatherwidget-io"
-        href="https://forecast7.com/en/40d76n111d89/salt-lake-city/?unit=us"
-        data-label_1="SALT LAKE CITY"
-        data-label_2="WEATHER"
-        data-font="Arial Rounded MT Bold"
-        data-icons="Climacons Animated"
-        data-shadow="#000000"
-        data-textcolor="#ffffff"
-        data-highcolor="#ff9120"
-        data-lowcolor="#83a5ff"
-        data-suncolor="#fff037"
-        data-mooncolor="#9fe6ff"
-        data-cloudcolor="#000000"
-        data-cloudfill="#6cc4ff"
-        data-raincolor="#2335b1"
-        data-snowcolor="#b8d0ff"
-      >
-        SALT LAKE CITY WEATHER
-      </a> */}
     </div>
   );
 }

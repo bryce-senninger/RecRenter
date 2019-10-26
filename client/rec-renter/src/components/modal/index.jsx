@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "../modal/style-modal.css";
 
-// const root = document.getElementById("root");
 const modalRoot = document.getElementById("modal-root");
 
 class Modal extends React.Component {
@@ -78,7 +77,6 @@ class Modal extends React.Component {
             margin: "1rem",
             position: "relative",
             minWidth: "300px",
-            // boxShadow: "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
             justifySelf: "center"
           }}
           className="modal-body"

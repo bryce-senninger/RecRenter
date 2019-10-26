@@ -1,7 +1,5 @@
 import React from "react";
 import "../signUpForm/style-form.css";
-// import SignUp from "../../pages/signup";
-// import { PromiseProvider } from "mongoose";
 
 function SignUpForm(props) {
   return (
@@ -12,11 +10,7 @@ function SignUpForm(props) {
           <p>Tell us a bit about your rad self</p>
         </div>
         <hr />
-        <form
-          method="POST"
-          action="http://localhost:3001/api/user/signup"
-          // encType="multipart/form-data"
-        >
+        <form method="POST" action="http://localhost:3001/api/user/signup">
           <div className="form-row">
             <div className="col-md-6 mb-3">
               <label for="validationDefault01">First Name</label>
@@ -182,11 +176,7 @@ function SignUpForm(props) {
               onChange={props.handleChange}
             />
           </div>
-          <form
-          // method="POST"
-          // action="http://localhost:3001/api/user/signup"
-          // enctype="multipart/form-data"
-          >
+          <form>
             <div class="form-group-one">
               <label for="exampleFormControlFile1">
                 Upload a Photo to Your Profile

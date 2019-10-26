@@ -1,14 +1,7 @@
 import React, { Component } from "react";
-// import Header from "../components/header";
-// import MissionCard from "../components/mission";
-// import News from "../components/news";
-// import Weather from "../components/weather";
-// import Featured from "../components/featuredPosts";
 import SignUpForm from "../components/signUpForm";
 
 class SignUp extends Component {
-  // constructor(props) {
-  // super(props);
   state = {
     firstname: "",
     lastname: "",
@@ -20,9 +13,7 @@ class SignUp extends Component {
     password: "",
     imagePath: ""
   };
-  // this.handleChange = this.handleChange.bind(this);
-  // this.handleSubmit = this.handleSubmit.bind(this);
-  // }
+
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
@@ -47,8 +38,6 @@ class SignUp extends Component {
       .then(info => console.log(info));
   };
 
-  //lifecycle methods
-  //functional methods
   render() {
     return (
       <div className="App">

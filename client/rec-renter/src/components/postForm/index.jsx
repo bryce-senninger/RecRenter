@@ -1,7 +1,5 @@
 import React from "react";
 import "../postForm/style-post.css";
-// import SignUp from "../../pages/signup";
-// import { PromiseProvider } from "mongoose";
 
 function PostForm(props) {
   console.log(props);
@@ -19,7 +17,7 @@ function PostForm(props) {
           encType="multipart/form-data"
         >
           <div className="form-row">
-            <div className="col-md-6 mb-3">
+            <div className="col-md-4 mb-3">
               <label htmlFor="validationDefault01">Post Title</label>
               <input
                 type="text"
@@ -31,7 +29,7 @@ function PostForm(props) {
                 required
               />
             </div>
-            <div className="col-md-6 mb-3">
+            <div className="col-md-4 mb-3">
               <label htmlFor="validationDefault03">Location</label>
               <input
                 type="text"
@@ -41,6 +39,19 @@ function PostForm(props) {
                 value={props.location}
                 onChange={props.handleChange}
                 required
+              />
+            </div>
+            <div className="form-group col-md-4 mb-3">
+              <label for="exampleInputEmail1">Email Address</label>
+              <input
+                type="email"
+                name="email"
+                value={props.email}
+                onChange={props.handleChange}
+                className="form-control"
+                id="email"
+                aria-describedby="emailHelp"
+                placeholder="email@sample.com"
               />
             </div>
           </div>
@@ -55,13 +66,13 @@ function PostForm(props) {
                 id={props.id}
                 key={props.id}
               >
+                <option>Select One:</option>
                 {props.category.subcategories.map(index => {
                   return (
                     <option
                       data-id={index._id}
                       value={index._id}
                       name={props.value}
-                      // key={index._id}
                     >
                       {index.name}
                     </option>
@@ -88,10 +99,8 @@ function PostForm(props) {
               </label>
               <input
                 type="file"
-                // className="form-control-file form-control"
                 id="imagePath-2"
                 name="imagePath"
-                // className="form-control-file form-control"
                 value={props.imagePath}
                 onChange={props.handleChange}
               />

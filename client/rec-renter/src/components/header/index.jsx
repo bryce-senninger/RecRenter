@@ -1,6 +1,5 @@
 import React from "react";
 import "../header/style-header.css";
-// import canoe from "./canoe.png";
 
 function Header() {
   return (
@@ -15,7 +14,6 @@ function Header() {
         <p className="lead">
           A simple way to find and list rentals for recrational gear
         </p>
-        {/* <p className="lead">rentals for recrational gear.</p> */}
         <p className="lead">
           Plan your next adventure, make a memory that lasts
         </p>
