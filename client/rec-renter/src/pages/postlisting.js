@@ -104,8 +104,9 @@ class PostListing extends Component {
             handleChange={this.handleChange}
             category={this.state.currentCategory}
             title={this.state.title}
+            description={this.state.description}
             location={this.state.location}
-            value={this.state.subcategoryId}
+            name={this.state.subcategoryId}
             price={this.state.price}
             imagePath={this.state.imagePath}
             // value={this.state.value}
