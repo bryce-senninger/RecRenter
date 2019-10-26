@@ -48,7 +48,13 @@ function PostForm(props) {
             <div className="col-md-4 mb-2">
               <label htmlFor="exampleInputEmail1">Sub-Category</label>
 
-              <select className="form-control" onChange={props.handleChange}>
+              <select
+                className="form-control"
+                name="subcategoryId"
+                onChange={props.handleChange}
+                id={props.value}
+                key={props.value}
+              >
                 {props.category.subcategories.map(index => {
                   return (
                     <option

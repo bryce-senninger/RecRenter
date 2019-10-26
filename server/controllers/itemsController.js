@@ -9,6 +9,8 @@ module.exports = {
       .catch(err => res.json(err));
   },
   createItem: function(req, res) {
+    const path = require("path");
+
     const cloudinary = require("cloudinary").v2;
 
     cloudinary.config({
@@ -17,20 +19,21 @@ module.exports = {
       api_secret: "9yurGnuwemrGwR90gIdL7d3_wdQ"
     });
 
-    const path = req.file.path;
+    const newpath = req.file.path;
     const uniqueFilename = new Date().toISOString();
 
     cloudinary.uploader.upload(
-      path,
+      newpath,
       { public_id: `items/${uniqueFilename}`, tags: `item` },
       function(err, image) {
         if (err) return res.send(err);
         console.log("file uploaded to Cloudinary");
 
         const fs = require("fs");
-        fs.unlinkSync(path);
+        // fs.unlinkSync(path);
 
         res.json(image);
+        new Item(image);
 
         // let imagePath = result.files;
       }
