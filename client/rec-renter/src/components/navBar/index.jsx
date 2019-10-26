@@ -85,11 +85,6 @@ class NavBar extends React.Component {
             </li>
 
             <li className="nav-item ml-auto">
-              {/* <img src={lock} alt="" /> */}
-              <Link
-                to="/login"
-                className={window.location.pathname === "/login"}
-              />
               <button
                 className="btn btn-primary pull-right"
                 id="button-nav"

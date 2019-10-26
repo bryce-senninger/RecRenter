@@ -22,12 +22,6 @@ h5 {
   margin: auto;
   margin-bottom: 40px;
 }
-/* .wrapper {
-  padding: 20px;
-  padding-top: 17px;
-  margin-top: 40px;
-  margin-bottom: 200px;
-} */
 
 .h1,
 h1 {
@@ -38,4 +32,31 @@ h1 {
   color: white;
   font-size: 20px;
   text-decoration: overline;
+}
+
+.localNews {
+  font-family: "Alfa Slab One", cursive;
+  font-size: 45px;
+  color: black;
+}
+
+.outdoorNews {
+  background-image: url(./abstract-21118_1920.jpg);
+  background-size: cover;
+
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 60px 74px black, 0 24px 141px rgb(0, 0, 0);
+  color: black;
+}
+
+.articles {
+  text-align: justify;
+  margin-right: 25px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.newsLink:hover {
+  color: white;
 }

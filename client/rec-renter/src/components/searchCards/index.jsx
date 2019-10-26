@@ -5,20 +5,19 @@ function SearchCard(props) {
   return (
     <div
       className="card searchCard"
-      onClick={e => props.handleClick(props.id, e)}
+      // onClick={e => props.handleClick(props.id, e)}
       key={props.id}
       id={props.id}
     >
-      <img
-        className="categoryImg"
-        alt={props.name}
-        src={props.image}
-        category={props.name}
-        value={props.value}
-        subcategory={props.subCategory}
-      />
-      <div>
-        <h2 className="categoryNames">{props.name}</h2>
+      <h1 className="itemTitle">{props.title}</h1>
+      <div className="listDescription">
+        <div className="itemImageContainer"></div>
+        <div className="itemText">
+          <h2 className="price">${props.price} per day</h2>
+          <h2>Location: {props.location}</h2>
+          <h2>{props.description}</h2>
+          <h2>Contact Lister: {props.email}</h2>
+        </div>
       </div>
     </div>
   );

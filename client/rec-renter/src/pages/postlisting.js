@@ -5,6 +5,7 @@ import CategoryCard from "../components/categoryCards";
 import CardWrap from "../components/cardWrap";
 import "./style.css";
 import PostForm from "../components/postForm";
+import ThanksHeader from "../components/thanksHeader";
 
 class PostListing extends Component {
   state = {
@@ -16,8 +17,10 @@ class PostListing extends Component {
     imagePath: "",
     price: "",
     subcategoryId: "",
+    email: "",
     currentCategory: null,
-    currentSubcategory: null
+    currentSubcategory: null,
+    currentStage: "category"
   };
 
   //lifecycle methods
@@ -50,7 +53,8 @@ class PostListing extends Component {
       .then(category => {
         console.log(category, "api resposnse");
         this.setState({
-          currentCategory: category
+          currentCategory: category,
+          currentStage: "form"
         });
       })
       .catch(err => {
@@ -75,11 +79,15 @@ class PostListing extends Component {
   handleSubmit = event => {
     event.preventDefault();
     console.log(this.state);
+    this.setState({
+      currentStage: "success"
+    });
     let data = {
       title: this.state.title,
       description: this.state.description,
       location: this.state.location,
       imagePath: this.state.imagePath,
+      email: this.state.email,
       price: this.state.price,
       subcategoryId: this.state.subcategoryId
     };
@@ -102,10 +110,33 @@ class PostListing extends Component {
       .catch(err => console.log(err));
   };
 
-  render() {
-    return (
-      <div className="App">
-        {this.state.currentCategory ? (
+  postStage(stage) {
+    switch (stage) {
+      case "category":
+        return (
+          <>
+            <PostHeader />
+            <CardWrap>
+              {this.state.options
+                ? this.state.options.map(option => (
+                    <CategoryCard
+                      handleClick={this.handleClick}
+                      key={option._id}
+                      id={option._id}
+                      name={option.name}
+                      subCategories={option.subcategories}
+                      image={option.image}
+                      category={option.name}
+                      value={option.category}
+                      setCategory={this.selectCategory}
+                    />
+                  ))
+                : ""}
+            </CardWrap>
+          </>
+        );
+      case "form":
+        return (
           <PostForm
             handleChange={this.handleChange}
             category={this.state.currentCategory}
@@ -116,6 +147,32 @@ class PostListing extends Component {
             price={this.state.price}
             imagePath={this.state.imagePath}
             handleSubmit={this.handleSubmit}
+            email={this.state.email}
+          />
+        );
+      case "success":
+        return <ThanksHeader />;
+      default:
+        return;
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        {this.postStage(this.state.currentStage)}
+        {/* {this.state.currentCategory ? (
+          <PostForm
+            handleChange={this.handleChange}
+            category={this.state.currentCategory}
+            title={this.state.title}
+            description={this.state.description}
+            location={this.state.location}
+            name={this.state.subcategoryId}
+            price={this.state.price}
+            imagePath={this.state.imagePath}
+            handleSubmit={this.handleSubmit}
+            email={this.state.email}
           />
         ) : (
           <>
@@ -138,7 +195,7 @@ class PostListing extends Component {
                 : ""}
             </CardWrap>
           </>
-        )}
+        )} */}
       </div>
     );
   }

@@ -4,6 +4,8 @@ import CategoryCard from "../components/categoryCards";
 import SubcategoryCard from "../components/subcategoryCard";
 import options from "../options.json";
 import CardWrap from "../components/cardWrap";
+import SearchCard from "../components/searchCards";
+import SearchCardWrap from "../components/searchCardWrap";
 import "./style.css";
 // import PostForm from "../components/postForm";
 
@@ -17,10 +19,13 @@ class SearchListings extends Component {
       location: "",
       imagePath: "",
       price: "",
-      subcategoryId: ""
+      email: "",
+      subcategoryId: null
     },
     currentCategory: null,
-    searchedSub: null
+    searchedSub: null,
+    currentPage: "categories",
+    itemMatches: null
   };
 
   //lifecycle methods
@@ -53,9 +58,11 @@ class SearchListings extends Component {
       .then(category => {
         console.log(category, "api resposnse");
         this.setState({
-          currentCategory: category
+          currentCategory: category,
+          currentPage: "subcategories"
         });
         console.log(this.state.currentCategory);
+        console.log(this.state.currentPage);
       })
       .catch(err => {
         if (err) {
@@ -71,6 +78,15 @@ class SearchListings extends Component {
       })
       .then(response => {
         console.log(response, "--Item search--");
+        this.setState({
+          itemMatches: response
+        });
+      })
+      .then(e => {
+        this.setState({
+          currentPage: "searchresults"
+        });
+        console.log(this.state.itemMatches, "Item matches in state");
       })
       .catch(err => {
         if (err) {
@@ -90,55 +106,11 @@ class SearchListings extends Component {
       [event.target.name]: event.target.value
     });
   };
-  handleSubmit = event => {
-    event.preventDefault();
-    console.log(this.state);
 
-    fetch("http://localhost:3001/api/item", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json"
-      },
-      body: JSON.stringify(this.state.item)
-    })
-      .then(function(result) {
-        return result.json();
-      })
-
-      .then(item => console.log(item));
-  };
-
-  render() {
-    return (
-      <div className="App">
-        {this.state.currentCategory ? (
-          // <PostForm
-          //   handleChange={this.handleChange}
-          //   category={this.state.currentCategory}
-          //   postTitle={this.state.title}
-          //   location={this.state.location}
-          //   subcategory={this.state.subcategories}
-          //   price={this.state.price}
-          //   imagePath={this.state.imagePath}
-          //   item={this.state.item}
-          //   handleSubmit={this.handleSubmit}
-          // />
-          <CardWrap>
-            {this.state.currentCategory.subcategories.map(option => (
-              <SubcategoryCard
-                subCategoryHandleClick={this.subCategoryHandleClick}
-                key={option._id}
-                id={option._id}
-                name={option.name}
-                subCategories={option.subcategories}
-                image={option.image}
-                // category={option.name}
-                // value={option.category}
-                // setCategory={this.selectCategory}
-              />
-            ))}
-          </CardWrap>
-        ) : (
+  renderSwitch(currentPage) {
+    switch (currentPage) {
+      case "categories":
+        return (
           <>
             <SearchHeader />
             <CardWrap>
@@ -159,8 +131,47 @@ class SearchListings extends Component {
                 : ""}
             </CardWrap>
           </>
-        )}
-      </div>
+        );
+      case "subcategories":
+        return (
+          <>
+            <SearchHeader />
+            <CardWrap>
+              {this.state.currentCategory.subcategories.map(option => (
+                <SubcategoryCard
+                  subCategoryHandleClick={this.subCategoryHandleClick}
+                  key={option._id}
+                  id={option._id}
+                  name={option.name}
+                  subCategories={option.subcategories}
+                  image={option.image}
+                />
+              ))}
+            </CardWrap>
+          </>
+        );
+      case "searchresults":
+        return (
+          <SearchCardWrap>
+            {this.state.itemMatches.map(matches => (
+              <SearchCard
+                title={matches.title}
+                price={matches.price}
+                location={matches.location}
+                description={matches.description}
+                email={matches.email}
+              />
+            ))}
+          </SearchCardWrap>
+        );
+      default:
+        return null;
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">{this.renderSwitch(this.state.currentPage)}</div>
     );
   }
 }
