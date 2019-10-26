@@ -19,7 +19,8 @@ class SearchListings extends Component {
       price: "",
       subcategoryId: ""
     },
-    currentCategory: null
+    currentCategory: null,
+    searchedSub: null
   };
 
   //lifecycle methods
@@ -54,6 +55,7 @@ class SearchListings extends Component {
         this.setState({
           currentCategory: category
         });
+        console.log(this.state.currentCategory);
       })
       .catch(err => {
         if (err) {
@@ -61,17 +63,14 @@ class SearchListings extends Component {
         }
       });
   };
-  subcategoryHandleClick = id => {
-    fetch("http://localhost:3001/api/category/" + id)
+  subCategoryHandleClick = subcategoryId => {
+    fetch("http://localhost:3001/api/item/" + subcategoryId)
       .then(function(result) {
         return result.json();
         // console.log(result);
       })
-      .then(category => {
-        console.log(category, "api resposnse");
-        this.setState({
-          currentCategory: category
-        });
+      .then(response => {
+        console.log(response, "--Item search--");
       })
       .catch(err => {
         if (err) {
@@ -80,11 +79,11 @@ class SearchListings extends Component {
       });
   };
 
-  selectCategory = category => {
-    this.setState({
-      currentCategory: category
-    });
-  };
+  // selectCategory = category => {
+  //   this.setState({
+  //     currentCategory: category
+  //   });
+  // };
 
   handleChange = event => {
     this.setState({
@@ -127,15 +126,15 @@ class SearchListings extends Component {
           <CardWrap>
             {this.state.currentCategory.subcategories.map(option => (
               <SubcategoryCard
-                handleClick={this.handleClick}
+                subCategoryHandleClick={this.subCategoryHandleClick}
                 key={option._id}
                 id={option._id}
                 name={option.name}
                 subCategories={option.subcategories}
                 image={option.image}
-                category={option.name}
-                value={option.category}
-                setCategory={this.selectCategory}
+                // category={option.name}
+                // value={option.category}
+                // setCategory={this.selectCategory}
               />
             ))}
           </CardWrap>
