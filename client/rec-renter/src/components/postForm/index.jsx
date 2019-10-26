@@ -52,8 +52,8 @@ function PostForm(props) {
                 className="form-control"
                 name="subcategoryId"
                 onChange={props.handleChange}
-                id={props.value}
-                key={props.value}
+                id={props.id}
+                key={props.id}
               >
                 {props.category.subcategories.map(index => {
                   return (
@@ -61,7 +61,7 @@ function PostForm(props) {
                       data-id={index._id}
                       value={index._id}
                       name={props.value}
-                      key={index._id}
+                      // key={index._id}
                     >
                       {index.name}
                     </option>
