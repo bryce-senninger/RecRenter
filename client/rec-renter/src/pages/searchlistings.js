@@ -26,10 +26,10 @@ class SearchListings extends Component {
     itemMatches: null
   };
 
-  //lifecycle methods
   componentDidMount() {
     this.getCategories();
   }
+
   getCategories = () => {
     fetch("http://localhost:3001/api/category", {
       method: "GET",
