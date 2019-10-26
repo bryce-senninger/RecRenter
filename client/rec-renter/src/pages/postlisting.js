@@ -16,7 +16,8 @@ class PostListing extends Component {
     imagePath: "",
     price: "",
     subcategoryId: "",
-    currentCategory: null
+    currentCategory: null,
+    currentSubcategory: null
   };
 
   //lifecycle methods
@@ -92,7 +93,12 @@ class PostListing extends Component {
     })
       .then(result => result.json(result))
 
-      .then(item => console.log(item))
+      .then(item => {
+        this.setState({
+          currentSubcategory: item
+        });
+        console.log(this.state.currentSubcategory);
+      })
       .catch(err => console.log(err));
   };
 
@@ -109,8 +115,6 @@ class PostListing extends Component {
             name={this.state.subcategoryId}
             price={this.state.price}
             imagePath={this.state.imagePath}
-            // value={this.state.value}
-            // item={this.state.item}
             handleSubmit={this.handleSubmit}
           />
         ) : (

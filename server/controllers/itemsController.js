@@ -46,8 +46,8 @@ module.exports = {
       .catch(err => res.json(err));
   },
   findOne: function(req, res) {
-    let id = req.params.id;
-    Item.findOne({ _id: id })
+    let _id = req.params.subcategoryId;
+    Item.find({ subcategoryId: _id })
       .populate({
         path: "subcategories",
         select: "name image"
