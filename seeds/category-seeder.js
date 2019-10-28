@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 const { Category, Subcategory } = require("../models/category");
 // const Subcategory = require("../models/category");
 
-const mongoURL = process.env.MONGODB_URI || "mongodb://localhost/RecRenter";
+const mongoURL =
+  process.env.MONGODB_URI ||
+  "mongodb://heroku_4r52n1vg:i4rh0v346f38p12s4rb8f6u237@ds139768.mlab.com:39768/heroku_4r52n1vg";
 
 mongoose.connect(mongoURL, { useNewUrlParser: true, useFindAndModify: false });
 

@@ -31,7 +31,7 @@ class SearchListings extends Component {
   }
 
   getCategories = () => {
-    fetch("http://localhost:3001/api/category", {
+    fetch("/api/category", {
       method: "GET",
       headers: {
         "Content-type": "application/json"
@@ -48,7 +48,7 @@ class SearchListings extends Component {
   };
 
   handleClick = id => {
-    fetch("http://localhost:3001/api/category/" + id)
+    fetch("/api/category/" + id)
       .then(function(result) {
         return result.json();
       })
@@ -68,7 +68,7 @@ class SearchListings extends Component {
       });
   };
   subCategoryHandleClick = subcategoryId => {
-    fetch("http://localhost:3001/api/item/" + subcategoryId)
+    fetch("/api/item/" + subcategoryId)
       .then(function(result) {
         return result.json();
       })

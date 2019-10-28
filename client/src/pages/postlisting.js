@@ -27,7 +27,7 @@ class PostListing extends Component {
     this.getCategories();
   }
   getCategories = () => {
-    fetch("http://localhost:3001/api/category", {
+    fetch("/api/category", {
       method: "GET",
       headers: {
         "Content-type": "application/json"
@@ -44,7 +44,7 @@ class PostListing extends Component {
   };
 
   handleClick = id => {
-    fetch("http://localhost:3001/api/category/" + id)
+    fetch("/api/category/" + id)
       .then(function(result) {
         return result.json();
       })
@@ -90,7 +90,7 @@ class PostListing extends Component {
       subcategoryId: this.state.subcategoryId
     };
 
-    fetch("http://localhost:3001/api/item", {
+    fetch("/api/item", {
       method: "POST",
       headers: {
         "Content-type": "application/json"

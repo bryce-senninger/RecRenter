@@ -1,5 +1,5 @@
 import React from "react";
-import "../mission/style-mission.css";
+import "./style-mission.css";
 import money2 from "./white-money.png";
 import bike2 from "./white-bike.png";
 import tree3 from "./tree-whit.png";

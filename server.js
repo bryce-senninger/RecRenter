@@ -1,15 +1,15 @@
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
-const passport = require("passport");
+// const passport = require("passport");
 const session = require("express-session");
 const app = express();
 const cors = require("cors");
 const cloudinary = require("cloudinary");
 const PORT = process.env.PORT || 3001;
 
-require("./passport")(passport);
-const routes = require("./routes/index", passport);
+// require("./server/passport")(passport);
+const routes = require("./routes/index");
 
 cloudinary.config({
   cloud_name: "dqpccnwco",
@@ -30,28 +30,30 @@ app.use(
     resave: false
   })
 );
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 app.use(routes);
 
 // REQUIRE MONGOOSE AND CONNECTION TO DATABASE //
 const mongoose = require("mongoose");
-const mongoURL = process.env.MONGODB_URI || "mongodb://localhost/RecRenter";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/RecRenter";
 
 mongoose
-  .connect(mongoURL, { useNewUrlParser: true, useFindAndModify: false })
+  .connect(MONGODB_URI, { useNewUrlParser: true, useFindAndModify: false })
   .then(() => {
     console.log("💻 ==> Database Connected!!");
   })
   .catch(err => {
     console.log(`Error connecting to Mongo: ${err}`);
   });
+console.log("process.env");
+console.log(process.env);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-app.get("*", cors(), (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 app.listen(PORT, () => {

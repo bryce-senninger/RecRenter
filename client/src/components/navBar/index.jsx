@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../navBar/style-nav.css";
+import "./style-nav.css";
 import Modal from "../modal";
 import newlogo from "./new-logo-white.png";
 
