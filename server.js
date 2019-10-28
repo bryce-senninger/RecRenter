@@ -46,8 +46,6 @@ mongoose
   .catch(err => {
     console.log(`Error connecting to Mongo: ${err}`);
   });
-console.log("process.env");
-console.log(process.env);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
