@@ -15,7 +15,7 @@ function Header() {
           A simple way to find and list rentals for recrational gear
         </p>
         <p className="lead">
-          Plan your next adventure, make a memory that lasts
+          Plan your next adventure, or help others find theirs
         </p>
       </div>
     </div>
