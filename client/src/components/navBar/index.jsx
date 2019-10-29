@@ -74,7 +74,7 @@ class NavBar extends React.Component {
                     : "nav-link"
                 }
               >
-                Saved Posts
+                Saved
               </Link>
             </li>
 

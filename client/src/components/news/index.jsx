@@ -9,10 +9,10 @@ function News() {
       data-aos-easing="linear"
       data-aos-duration="1500"
     >
-      <p className="p-news">Local Outdoor News</p>
+      <p className="p-news">Latest Outdoor News</p>
       <ul className="list-unstyled">
         <div className="media-body outdoorNews">
-          <h1 className="mt-0 mb-1 localNews">Outdoors News</h1>
+          <h1 className="mt-0 mb-1 localNews">Local News</h1>
           <ul className="articles">
             <a
               className="newsLink"

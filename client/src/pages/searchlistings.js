@@ -5,6 +5,7 @@ import SubcategoryCard from "../components/subcategoryCard";
 import CardWrap from "../components/cardWrap";
 import SearchCard from "../components/searchCards";
 import SearchCardWrap from "../components/searchCardWrap";
+import NoResultHeader from "../components/noResultHeader";
 import "./style.css";
 
 class SearchListings extends Component {
@@ -77,6 +78,7 @@ class SearchListings extends Component {
         this.setState({
           itemMatches: response
         });
+        console.log(this.state.itemMatches, "item matches");
       })
       .then(e => {
         this.setState({
@@ -143,15 +145,19 @@ class SearchListings extends Component {
       case "searchresults":
         return (
           <SearchCardWrap>
-            {this.state.itemMatches.map(matches => (
-              <SearchCard
-                title={matches.title}
-                price={matches.price}
-                location={matches.location}
-                description={matches.description}
-                email={matches.email}
-              />
-            ))}
+            {this.state.itemMatches.length > 0 ? (
+              this.state.itemMatches.map(matches => (
+                <SearchCard
+                  title={matches.title}
+                  price={matches.price}
+                  location={matches.location}
+                  description={matches.description}
+                  email={matches.email}
+                />
+              ))
+            ) : (
+              <NoResultHeader />
+            )}
           </SearchCardWrap>
         );
       default:

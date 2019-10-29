@@ -17,7 +17,7 @@ function Featured(props) {
               <h2 className="price">${props.price} per day</h2>
               <h2>Location: {props.location}</h2>
               <br></br>
-              <h2>{props.description}</h2>
+              <h2 className="featureDescription">{props.description}</h2>
               <br></br>
               <h2 className="featureEmail">Contact Lister: {props.email}</h2>
             </div>

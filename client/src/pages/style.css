@@ -14,3 +14,7 @@ body {
     no-repeat center fixed;
   background-size: cover;
 }
+
+.noResults {
+  color: white;
+}

@@ -13,7 +13,7 @@ h5 {
   margin-bottom: 20px;
   border-style: double;
   background-color: white;
-  color: black;
+  color: rgb(0, 0, 0);
   box-shadow: 0px 0px 20px;
   border-radius: 8px;
 }
@@ -26,7 +26,6 @@ h5 {
 .h1,
 h1 {
   font-size: 2.5rem;
-  text-decoration: underline;
 }
 .p-news {
   color: white;
@@ -37,26 +36,40 @@ h1 {
 .localNews {
   font-family: "Alfa Slab One", cursive;
   font-size: 45px;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .outdoorNews {
-  background-image: url(./abstract-21118_1920.jpg);
+  background-image: url(forest-3119826_1920.jpg);
   background-size: cover;
 
   border: 3px solid rgb(255, 255, 255);
   border-radius: 10px;
   box-shadow: 0 60px 74px black, 0 24px 141px rgb(0, 0, 0);
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .articles {
   text-align: justify;
-  margin-right: 25px;
+  padding-right: 25px;
   font-weight: bold;
   font-size: 25px;
 }
 
 .newsLink:hover {
-  color: white;
+  color: rgb(255, 255, 255);
+}
+
+.newsLink {
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px #000000;
+}
+
+.media-body h1 {
+  color: black;
+  text-shadow: 2px 2px #ffffff;
+}
+
+.media-body:hover h1 {
+  text-decoration: underline;
 }

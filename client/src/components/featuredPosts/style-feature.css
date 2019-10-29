@@ -24,3 +24,21 @@
 .featureEmail {
   font-size: 25px;
 }
+
+.featureCard h1 {
+  color: black;
+  text-shadow: 2px 2px #ffffff;
+}
+
+.featureDescription {
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px black;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.featureEmail {
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px #000000;
+}
