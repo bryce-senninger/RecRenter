@@ -12,7 +12,7 @@ function Header() {
       <div className="jumbotron landingJumbo">
         <h1 className="display-4 landingHead">Rec Renter</h1>
         <p className="lead">
-          A simple way to find and list rentals for recrational gear
+          A simple way to find and list rentals for recreational gear
         </p>
         <p className="lead">
           Plan your next adventure, or help others find theirs
